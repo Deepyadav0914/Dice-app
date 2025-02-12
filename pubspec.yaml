@@ -46,6 +46,8 @@ dependencies:
   permission_handler:
   device_info_plus:
   lucide_icons:
+  google_fonts:
+  animated_text_kit:
 
 dev_dependencies:
   flutter_test:

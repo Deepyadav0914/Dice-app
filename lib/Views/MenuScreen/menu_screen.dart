@@ -1,145 +1,188 @@
+import 'package:dice_app/Views/DDRewardsScreen/ddreward_screen.dart';
+import 'package:dice_app/Views/StickersScreen/Controller/stickers_controller.dart';
+import 'package:dice_app/Views/StickersScreen/stickers_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import '../../Api/api_calling.dart';
+import 'Controller/menu_controller.dart';
 
-import '../../repository/background_layout.dart';
+class MenuScreen extends StatelessWidget {
+  static const String routeName = '/MenuScreen';
 
-class MainMenu extends StatelessWidget {
-  String Acme = 'acme';
+  MenuScreen({super.key});
 
-  final List<Map<String, dynamic>> menuItems = [
-    {
-      "icon": LucideIcons.gift,
-      "label": "MM Rewards",
-      "action": () => print("MM Rewards clicked!")
-    },
-    {
-      "icon": LucideIcons.star,
-      "label": "Top GIFs",
-      "action": () => print("Top GIFs clicked!")
-    },
-    {
-      "icon": LucideIcons.book,
-      "label": "Tips & Tricks",
-      "action": () => print("Tips & Tricks clicked!")
-    },
-    {
-      "icon": LucideIcons.helpCircle,
-      "label": "Latest FAQs",
-      "action": () => print("Latest FAQs clicked!")
-    },
-    {
-      "icon": LucideIcons.barChart2,
-      "label": "Statistics",
-      "action": () => print("Statistics clicked!")
-    },
-    {
-      "icon": LucideIcons.barChart2,
-      "label": "Statistics",
-      "action": () => print("Statistics clicked!")
-    },
-    {
-      "icon": LucideIcons.barChart2,
-      "label": "Statistics",
-      "action": () => print("Statistics clicked!")
-    },
-    {
-      "icon": LucideIcons.barChart2,
-      "label": "Statistics",
-      "action": () => print("Statistics clicked!")
-    },
-  ];
+  final controller = Get.put(MainMenuController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF8EC5FC), Color(0xFFE0C3FC)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.white, Colors.blueGrey],
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+              ),
             ),
-          ),
-          child: CustomPaint(
-            size: MediaQuery.of(context).size,
-            painter: CheckeredPainter(),
-          ),
-        ),
-
-        SafeArea(
-          child: SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                10.verticalSpace,
-                Text(
-                  "Home",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'acme',
-                    fontSize: 35.r,
-                    shadows: [
-                      Shadow(
-                          color: Colors.white,
-                          offset: Offset(2.r, 1.r),
-                          blurRadius: 3.r)
-                    ],
-                    fontWeight: FontWeight.bold,
+            child: SafeArea(
+              child: Column(
+                children: [
+                  Text(
+                    "Home",
+                    style: TextStyle(
+                      color: Colors.blueGrey,
+                      fontFamily: 'acme',
+                      fontSize: 30.r,
+                      shadows: [
+                        Shadow(
+                            color: Colors.black,
+                            offset: Offset(1.r, 1.r),
+                            blurRadius: 3.r)
+                      ],
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                10.verticalSpace,
-                ...menuItems.map((item) => Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 16.0),
-                      child: GestureDetector(
-                        onTap: item['action'],
-                        child: Container(
-                          padding: EdgeInsets.all(25),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16.0),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black87,
-                                blurRadius: 5,
-                                offset: Offset(4, 4),
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
+                  FutureBuilder(
+                    future: ApiCall().diceData(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Expanded(
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: const AlwaysScrollableScrollPhysics(),
+                            itemCount: MenuList.menuList.length,
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15.r, horizontal: 15.r),
+                            itemBuilder: (context, index) {
+                              var menulist = MenuList.menuList[index];
+                              return Column(
                                 children: [
-                                  Icon(item['icon'],
-                                      color: Colors.blueGrey, size: 40),
-                                  SizedBox(width: 16.0),
-                                  Text(
-                                    item['label'],
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: 'acme',
-                                      color: Colors.black87,
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      border: Border.all(
+                                          width: 3.r, color: Colors.blueGrey),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black,
+                                          offset: Offset(6.r, 6.r),
+                                          blurRadius: 10.r,
+                                        ),
+                                      ],
+                                    ),
+                                    margin: EdgeInsets.symmetric(vertical: 8.r),
+                                    padding: EdgeInsets.all(12.r),
+                                    child: ListTile(
+                                      onTap: () {
+                                        if (index == 0) {
+                                          Get.to(() => DDrewardScreen());
+                                        } else if (index == 1) {
+                                          Get.to(() => StickersScreen(),
+                                              binding:
+                                              BindingsBuilder(() {
+                                                Get.put(StickersController());
+                                              }));
+                                        } else if (index == 2) {
+                                          // Get.to(() => DataScreen(),
+                                          //     arguments: {
+                                          //       'data':
+                                          //       alldata![index + 1]
+                                          //           .data,
+                                          //       'name': alldata[index + 1]
+                                          //           .name
+                                          //     });
+                                        } else if (index == 3) {
+                                          // Get.to(() =>
+                                          //     StatisticsScreen());
+                                        } else if (index == 4) {
+                                          // Get.to(() =>
+                                          //     StatisticsScreen());
+                                        } else if (index == 5) {
+                                          // Get.to(() =>
+                                          //     StatisticsScreen());
+                                        } else if (index == 6) {
+                                          // Get.to(() => DataScreen(),
+                                          //     arguments: {
+                                          //       'data':
+                                          //       alldata![index - 4]
+                                          //           .data,
+                                          //       'name': alldata[index - 4]
+                                          //           .name
+                                          //     });
+                                        } else if (index == 7) {
+                                          // Get.to(() => DataScreen(),
+                                          //     arguments: {
+                                          //       'data':
+                                          //       alldata![index - 7]
+                                          //           .data,
+                                          //       'name': alldata[index - 7]
+                                          //           .name
+                                          //     });
+                                        }
+                                      },
+                                      leading: Icon(
+                                        size: 35.r,
+                                        color: Colors.blueGrey,
+                                        menulist.icon,
+                                      ),
+                                      title: Text(
+                                        menulist.name.toString(),
+                                        style: TextStyle(
+                                          fontFamily: 'acme',
+                                          fontSize: 25.r,
+                                          shadows: [
+                                            Shadow(
+                                                color: Colors.white,
+                                                offset: Offset(2.r, 1.r),
+                                                blurRadius: 3.r)
+                                          ],
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black87,
+                                        ),
+                                      ),
+                                      trailing: Icon(Icons.arrow_forward_ios,
+                                          color: Colors.blueGrey, size: 25.r),
                                     ),
                                   ),
                                 ],
-                              ),
-                              Icon(Icons.arrow_forward_ios,
-                                  color: Colors.blueGrey, size: 25),
-                            ],
+                              );
+                            },
                           ),
-                        ),
-                      ),
-                    )),
-              ],
+                        );
+                      }
+                      return Container();
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
+}
+
+class AddListtile {
+  final IconData icon;
+  final String name;
+
+  AddListtile({required this.icon, required this.name});
+}
+
+class MenuList {
+  static final menuList = [
+    AddListtile(icon: LucideIcons.gift, name: 'DD Rewards'),
+    AddListtile(icon: LucideIcons.star, name: 'Stickers'),
+    AddListtile(icon: LucideIcons.book, name: 'Origins'),
+    AddListtile(icon: LucideIcons.shield, name: 'Shield'),
+    AddListtile(icon: LucideIcons.hotel, name: 'Events'),
+    AddListtile(icon: LucideIcons.helpCircle, name: 'Latest FAQs'),
+    AddListtile(icon: LucideIcons.settings, name: 'Settings'),
+  ];
 }
