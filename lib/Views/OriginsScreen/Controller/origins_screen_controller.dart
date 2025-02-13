@@ -10,11 +10,11 @@ class OriginsController extends GetxController {
 
   @override
   void onInit() {
-    fetchRewardData();
+    fetchOriginsData();
     super.onInit();
   }
 
-  Future<void> fetchRewardData() async {
+  Future<void> fetchOriginsData() async {
     try {
       isLoading(true);
       final data = await ApiCall().originsData();

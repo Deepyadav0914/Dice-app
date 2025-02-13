@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import '../Model/dice_model.dart';
 import '../Model/origins_model.dart';
+import '../Model/shield_model.dart';
 import '../Model/stickers_model.dart';
 
 class ApiCall {
@@ -43,6 +44,21 @@ class ApiCall {
 
       if (response.statusCode == 200) {
         return originsModelFromJson(json.encode(response.data));
+      } else {
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      throw Exception('Error: $e');
+    }
+  }
+
+  Future<ShieldModel> shieldData() async {
+    try {
+      var response = await Dio().get(
+          'https://miracocopepsi.com/admin/mayur/coc/pradip/ios/monopoly_deep/shield.json');
+
+      if (response.statusCode == 200) {
+        return shieldModelFromJson(json.encode(response.data));
       } else {
         throw Exception('Failed to load data');
       }

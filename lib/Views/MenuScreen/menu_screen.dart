@@ -1,5 +1,6 @@
 import 'package:dice_app/Views/DDRewardsScreen/ddreward_screen.dart';
 import 'package:dice_app/Views/OriginsScreen/origins_screen.dart';
+import 'package:dice_app/Views/ShieldScreen/shield_screen.dart';
 import 'package:dice_app/Views/StickersScreen/Controller/stickers_controller.dart';
 import 'package:dice_app/Views/StickersScreen/stickers_screen.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +89,8 @@ class MenuScreen extends StatelessWidget {
                                         } else if (index == 2) {
                                           Get.to(() => OriginsScreen());
                                         } else if (index == 3) {
-                                          // Get.to(() =>
-                                          //     StatisticsScreen());
+                                          Get.to(() =>
+                                              ShieldScreen());
                                         } else if (index == 4) {
                                           // Get.to(() =>
                                           //     StatisticsScreen());
