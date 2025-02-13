@@ -51,7 +51,6 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                         icon: Icon(
                           Icons.arrow_back_ios,
                           color: Colors.blueGrey[500],
-
                           size: 30.r,
                           shadows: [
                             Shadow(
@@ -75,7 +74,6 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                 offset: Offset(1.r, 1.r),
                                 blurRadius: 3.r)
                           ],
-
                         ),
                       ),
                       Spacer(),
@@ -86,8 +84,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                     child: Image.asset(
                       Assets.imagesDice,
                       height: 150.r,
-                      color: Colors.teal
-                      [700],
+                      color: Colors.teal[700],
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -121,7 +118,6 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                             offset: Offset(1.r, 1.r),
                             blurRadius: 3.r)
                       ],
-
                     ),
                   ),
                   30.verticalSpace,

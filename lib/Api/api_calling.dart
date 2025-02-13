@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import '../Model/dice_model.dart';
+import '../Model/origins_model.dart';
 import '../Model/stickers_model.dart';
 
 class ApiCall {
@@ -35,18 +36,18 @@ class ApiCall {
     }
   }
 
-  // Future<RewardModel> rewardData() async {
-  //   try {
-  //     var response = await Dio().get(
-  //         'https://miracocopepsi.com/admin/mayur/coc/vaibhav/itunesapp/jeet/matchmasterrewards/rewards.json');
-  //
-  //     if (response.statusCode == 200) {
-  //       return rewardModelFromJson(json.encode(response.data));
-  //     } else {
-  //       throw Exception('Failed to load data');
-  //     }
-  //   } catch (e) {
-  //     throw Exception('Error: $e');
-  //   }
-  // }
+  Future<OriginsModel> originsData() async {
+    try {
+      var response = await Dio().get(
+          'https://miracocopepsi.com/admin/mayur/coc/pradip/ios/monopoly_deep/origins.json');
+
+      if (response.statusCode == 200) {
+        return originsModelFromJson(json.encode(response.data));
+      } else {
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      throw Exception('Error: $e');
+    }
+  }
 }

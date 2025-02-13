@@ -1,4 +1,5 @@
 import 'package:dice_app/Views/DDRewardsScreen/ddreward_screen.dart';
+import 'package:dice_app/Views/OriginsScreen/origins_screen.dart';
 import 'package:dice_app/Views/StickersScreen/Controller/stickers_controller.dart';
 import 'package:dice_app/Views/StickersScreen/stickers_screen.dart';
 import 'package:flutter/material.dart';
@@ -82,20 +83,10 @@ class MenuScreen extends StatelessWidget {
                                         if (index == 0) {
                                           Get.to(() => DDrewardScreen());
                                         } else if (index == 1) {
-                                          Get.to(() => StickersScreen(),
-                                              binding:
-                                              BindingsBuilder(() {
-                                                Get.put(StickersController());
-                                              }));
+                                          Get.to(() => StickersScreen());
+
                                         } else if (index == 2) {
-                                          // Get.to(() => DataScreen(),
-                                          //     arguments: {
-                                          //       'data':
-                                          //       alldata![index + 1]
-                                          //           .data,
-                                          //       'name': alldata[index + 1]
-                                          //           .name
-                                          //     });
+                                          Get.to(() => OriginsScreen());
                                         } else if (index == 3) {
                                           // Get.to(() =>
                                           //     StatisticsScreen());
