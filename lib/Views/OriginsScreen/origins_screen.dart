@@ -113,7 +113,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import '../../Generated/assets.dart';
 
 class OriginsScreen extends StatefulWidget {
   static const String routeName = '/OriginsScreen';
@@ -231,11 +230,6 @@ class _OriginsScreenState extends State<OriginsScreen> {
                                     },
                                   );
                                 },
-                                leading: Image.asset(
-                                  Assets.imagesDice,
-                                  height: 30.r,
-                                  color: Colors.teal[700],
-                                ),
                                 title: Text(
                                   item.category.toString(),
                                   style: TextStyle(

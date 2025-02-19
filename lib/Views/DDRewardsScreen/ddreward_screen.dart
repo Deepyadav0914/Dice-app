@@ -1,13 +1,13 @@
+import 'package:dice_app/Generated/assets.dart';
 import 'package:dice_app/Views/DDRewardsScreen/ddreward_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import '../../generated/assets.dart';
 import 'Controller/ddreward_controller.dart';
 
 class DDrewardScreen extends StatefulWidget {
-  static const String routeName = '/DDrewardScreen';
+   static const String routeName = '/DDrewardScreen';
 
   const DDrewardScreen({super.key});
 
@@ -160,8 +160,9 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                           },
                                           leading: Image.asset(
                                             Assets.imagesDice,
-                                            height: 40.r,
-                                            color: Colors.teal[700],
+                                            height: 36.r,
+                                            color: Colors.blueGrey[800],
+
                                           ),
                                           title: Text(
                                             reward.name.toString(),

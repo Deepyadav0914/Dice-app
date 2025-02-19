@@ -40,9 +40,8 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               16.verticalSpace,
               Image.asset(
-                color: Colors.black87,
-                Assets.imagesDice,
-                height: 150.r,
+                Assets.imagesSplash,
+
               ),
               LoadingAnimationWidget.threeArchedCircle(
                 color: Colors.black87,

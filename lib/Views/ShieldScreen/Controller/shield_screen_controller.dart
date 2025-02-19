@@ -16,9 +16,10 @@ class ShieldController extends GetxController {
   Future<void> fetchShieldData() async {
     try {
       isLoading(true);
-      final data = await ApiCall().shieldData();
+      final shielddata = await ApiCall().shieldData();
 
-      ShieldData.value = data;
+      ShieldData.value = shielddata;
+      print(shielddata.shieldData);
     } catch (e) {
       Get.snackbar("Error", "Failed to load data. Please try again.");
     } finally {

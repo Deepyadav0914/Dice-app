@@ -1,8 +1,11 @@
 import 'package:dice_app/Views/DDRewardsScreen/ddreward_screen.dart';
+import 'package:dice_app/Views/EventsScreen/events_screen.dart';
+import 'package:dice_app/Views/FaqsScreen/faqs_Screen.dart';
 import 'package:dice_app/Views/OriginsScreen/origins_screen.dart';
 import 'package:dice_app/Views/ShieldScreen/shield_screen.dart';
 import 'package:dice_app/Views/StickersScreen/Controller/stickers_controller.dart';
 import 'package:dice_app/Views/StickersScreen/stickers_screen.dart';
+import 'package:dice_app/Views/TokenScreen/tokens_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -11,7 +14,7 @@ import '../../Api/api_calling.dart';
 import 'Controller/menu_controller.dart';
 
 class MenuScreen extends StatelessWidget {
-  static const String routeName = '/MenuScreen';
+    // static const String routeName = '/MenuScreen';
 
   MenuScreen({super.key});
 
@@ -92,20 +95,14 @@ class MenuScreen extends StatelessWidget {
                                           Get.to(() =>
                                               ShieldScreen());
                                         } else if (index == 4) {
-                                          // Get.to(() =>
-                                          //     StatisticsScreen());
+                                          Get.to(() =>
+                                              EventsScreen());
                                         } else if (index == 5) {
-                                          // Get.to(() =>
-                                          //     StatisticsScreen());
+                                          Get.to(() =>
+                                              TokensScreen());
                                         } else if (index == 6) {
-                                          // Get.to(() => DataScreen(),
-                                          //     arguments: {
-                                          //       'data':
-                                          //       alldata![index - 4]
-                                          //           .data,
-                                          //       'name': alldata[index - 4]
-                                          //           .name
-                                          //     });
+                                          Get.to(() =>
+                                              FaqsScreen());
                                         } else if (index == 7) {
                                           // Get.to(() => DataScreen(),
                                           //     arguments: {
@@ -174,6 +171,7 @@ class MenuList {
     AddListtile(icon: LucideIcons.book, name: 'Origins'),
     AddListtile(icon: LucideIcons.shield, name: 'Shield'),
     AddListtile(icon: LucideIcons.hotel, name: 'Events'),
+    AddListtile(icon: LucideIcons.coins, name: 'Tokens'),
     AddListtile(icon: LucideIcons.helpCircle, name: 'Latest FAQs'),
     AddListtile(icon: LucideIcons.settings, name: 'Settings'),
   ];

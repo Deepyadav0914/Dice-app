@@ -1,24 +1,24 @@
 import 'package:dice_app/Api/api_calling.dart';
 import 'package:get/get.dart';
-import '../../../Model/origins_model.dart';
+import '../../../Model/tokens_model.dart';
 
-class OriginsController extends GetxController {
-  var originsData = OriginsModel(origins: []).obs;
+class TokensController extends GetxController {
+  var tokenData = TokensModel(tokensData: []).obs;
   RxBool isLoading = true.obs;
   String Acme = 'acme';
 
   @override
   void onInit() {
-    fetchOriginsData();
+    fetchTokensData();
     super.onInit();
   }
 
-  Future<void> fetchOriginsData() async {
+  Future<void> fetchTokensData() async {
     try {
       isLoading(true);
-      final data = await ApiCall().originsData();
+      final data = await ApiCall().tokensData();
 
-      originsData.value = data;
+      tokenData.value = data;
     } catch (e) {
       Get.snackbar("Error", "Failed to load data. Please try again.");
     } finally {

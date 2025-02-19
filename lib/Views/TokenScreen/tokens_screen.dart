@@ -1,19 +1,21 @@
-import 'package:dice_app/Views/ShieldScreen/Controller/shield_screen_controller.dart';
-import 'package:dice_app/Views/ShieldScreen/shield_details_screen.dart';
+import 'package:dice_app/Views/TokenScreen/tokens_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'Controller/tokens_controller.dart';
 
-class ShieldScreen extends StatefulWidget {
-  const ShieldScreen({super.key});
+class TokensScreen extends StatefulWidget {
+  static const String routeName = '/TokensScreen';
+
+  const TokensScreen({super.key});
 
   @override
-  State<ShieldScreen> createState() => _ShieldScreenState();
+  State<TokensScreen> createState() => _TokensScreenState();
 }
 
-class _ShieldScreenState extends State<ShieldScreen> {
-  final controller = Get.put((ShieldController()));
+class _TokensScreenState extends State<TokensScreen> {
+  final controller = Get.put((TokensController()));
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class _ShieldScreenState extends State<ShieldScreen> {
                   ),
                   Spacer(),
                   Text(
-                    'Shield',
+                    'Tokens',
                     style: TextStyle(
                       fontSize: 30.r,
                       fontFamily: 'acme',
@@ -79,9 +81,8 @@ class _ShieldScreenState extends State<ShieldScreen> {
                     ),
                   );
                 }
-                final data = controller.ShieldData.value.shieldData;
+                final data = controller.tokenData.value.tokensData;
                 return ListView.builder(
-                  shrinkWrap: true,
                   physics: const AlwaysScrollableScrollPhysics(),
                   itemCount: data.length,
                   itemBuilder: (context, index) {
@@ -107,19 +108,18 @@ class _ShieldScreenState extends State<ShieldScreen> {
                               ],
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(7.r),
+                              padding: EdgeInsets.all(8.r),
                               child: ListTile(
                                 onTap: () {
-                                  Get.to(() => ShieldsDetailScreen(),
+                                  Get.to(() => TokensDetailScreen(),
                                       arguments: {
                                         'item': item,
                                         'index': index
                                       })?.then(
-                                        (_) {
+                                    (_) {
                                       setState(() {});
                                     },
                                   );
-
                                 },
                                 title: Text(
                                   item.name.toString(),

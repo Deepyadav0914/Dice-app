@@ -3,7 +3,7 @@ import '../../../Model/origins_model.dart';
 
 class OriginsDetailController extends GetxController {
   RxList<Origin> item = <Origin>[].obs;
-  RxString rewardKey = ''.obs;
+
   RxInt index = 0.obs;
   String Acme = 'acme';
 

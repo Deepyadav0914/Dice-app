@@ -79,16 +79,13 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                       Spacer(),
                     ],
                   ),
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Center(
                     child: Image.asset(
-                      Assets.imagesDice,
-                      height: 150.r,
-                      color: Colors.teal[700],
-                      fit: BoxFit.fill,
+                      Assets.imagesReward,
+                      height: 260.r,
                     ),
                   ),
-                  30.verticalSpace,
                   Text(
                     controller.name,
                     style: TextStyle(
@@ -104,7 +101,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                       ],
                     ),
                   ),
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Text(
                     controller.formattedDate,
                     style: TextStyle(
@@ -120,7 +117,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                       ],
                     ),
                   ),
-                  30.verticalSpace,
+                  20.verticalSpace,
                   Text(
                     controller.description,
                     textAlign: TextAlign.center,
