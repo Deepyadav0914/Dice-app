@@ -95,7 +95,7 @@ class _ShieldScreenState extends State<ShieldScreen> {
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(22.r),
+                              borderRadius: BorderRadius.circular(20.r),
                               border: Border.all(
                                   width: 3.r, color: Colors.blueGrey),
                               boxShadow: [

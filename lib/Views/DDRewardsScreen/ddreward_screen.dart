@@ -132,7 +132,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius:
-                                            BorderRadius.circular(22.r),
+                                            BorderRadius.circular(20.r),
                                         border: Border.all(
                                             width: 3.r, color: Colors.blueGrey),
                                         boxShadow: [

@@ -81,7 +81,7 @@ class MenuScreen extends StatelessWidget {
                                       ],
                                     ),
                                     margin: EdgeInsets.symmetric(vertical: 8.r),
-                                    padding: EdgeInsets.all(12.r),
+                                    padding: EdgeInsets.all(11.r),
                                     child: ListTile(
                                       onTap: () {
                                         if (index == 0) {
