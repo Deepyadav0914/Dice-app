@@ -3,10 +3,8 @@ class Assets {
   Assets._();
 
   static const String fontsAcmeRegular = 'assets/fonts/Acme-Regular.ttf';
-  static const String imagesDdreward = 'assets/images/ddreward.png';
   static const String imagesDetails = 'assets/images/details.png';
   static const String imagesDice = 'assets/images/dice.png';
-  static const String imagesDiceicons = 'assets/images/diceicons.png';
   static const String imagesReward = 'assets/images/reward.png';
   static const String imagesSplash = 'assets/images/splash.png';
 
