@@ -197,14 +197,12 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
   Widget _buildActionButton(String label, VoidCallback? onPressed) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.brown[200],
-        borderRadius: BorderRadius.horizontal(),
-        border: Border.all(width: 3.r, color: Colors.black),
+        color: Colors.brown[400],
         boxShadow: [
           BoxShadow(
             color: Colors.black,
-            offset: Offset(6.r, 6.r),
-            blurRadius: 10.r,
+            offset: Offset(2.r, 6.r),
+            blurRadius: 4.r,
           ),
         ],
       ),
@@ -213,10 +211,9 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
         onTap: onPressed,
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.horizontal(),
-            border: Border.all(width: 3.r, color: Colors.black),
-          ),
+              borderRadius: BorderRadius.horizontal(),
+              color: Colors.white,
+              border: Border.all(color: Colors.black, width: 3.r)),
           margin: EdgeInsets.all(3.r),
           child: Center(
             child: Padding(

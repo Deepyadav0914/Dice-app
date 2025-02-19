@@ -117,7 +117,7 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     style: TextStyle(
                       fontSize: 22.r,
                       fontFamily: 'acme',
-                      color: Colors.blueGrey[940],
+                      color: Colors.blueGrey[900],
                       fontWeight: FontWeight.w500,
                       shadows: [
                         Shadow(
