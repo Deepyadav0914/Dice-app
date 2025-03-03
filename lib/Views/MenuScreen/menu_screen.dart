@@ -14,7 +14,7 @@ import '../../Api/api_calling.dart';
 import 'Controller/menu_controller.dart';
 
 class MenuScreen extends StatelessWidget {
-    // static const String routeName = '/MenuScreen';
+  // static const String routeName = '/MenuScreen';
 
   MenuScreen({super.key});
 
@@ -26,29 +26,20 @@ class MenuScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
             child: SafeArea(
               child: Column(
                 children: [
-                  Text(
-                    "Home",
-                    style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontFamily: 'acme',
-                      fontSize: 30.r,
-                      shadows: [
-                        Shadow(
-                            color: Colors.black,
-                            offset: Offset(1.r, 1.r),
-                            blurRadius: 3.r)
+                  Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('Welcome',
+                            style: TextStyle(
+                                fontSize: 26, fontWeight: FontWeight.bold)),
+                        Icon(Icons.account_circle, size: 35),
                       ],
-                      fontWeight: FontWeight.w500,
                     ),
                   ),
                   FutureBuilder(
@@ -71,59 +62,38 @@ class MenuScreen extends StatelessWidget {
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
-                                          width: 3.r, color: Colors.blueGrey),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black,
-                                          offset: Offset(6.r, 6.r),
-                                          blurRadius: 10.r,
-                                        ),
-                                      ],
+                                          width: 4.r, color: Colors.grey),
                                     ),
-                                    margin: EdgeInsets.symmetric(vertical: 8.r),
-                                    padding: EdgeInsets.all(11.r),
+                                    margin: EdgeInsets.symmetric(vertical: 7.r),
+                                    padding: EdgeInsets.all(8.r),
                                     child: ListTile(
                                       onTap: () {
                                         if (index == 0) {
                                           Get.to(() => DDrewardScreen());
                                         } else if (index == 1) {
                                           Get.to(() => StickersScreen());
-
                                         } else if (index == 2) {
                                           Get.to(() => OriginsScreen());
                                         } else if (index == 3) {
-                                          Get.to(() =>
-                                              ShieldScreen());
+                                          Get.to(() => ShieldScreen());
                                         } else if (index == 4) {
-                                          Get.to(() =>
-                                              EventsScreen());
+                                          Get.to(() => EventsScreen());
                                         } else if (index == 5) {
-                                          Get.to(() =>
-                                              TokensScreen());
+                                          Get.to(() => TokensScreen());
                                         } else if (index == 6) {
-                                          Get.to(() =>
-                                              FaqsScreen());
-                                        } else if (index == 7) {
-                                          // Get.to(() => DataScreen(),
-                                          //     arguments: {
-                                          //       'data':
-                                          //       alldata![index - 7]
-                                          //           .data,
-                                          //       'name': alldata[index - 7]
-                                          //           .name
-                                          //     });
-                                        }
+                                          Get.to(() => FaqsScreen());
+                                        } else if (index == 7) {}
                                       },
                                       leading: Icon(
-                                        size: 35.r,
-                                        color: Colors.blueGrey,
+                                        size: 32.r,
+                                        color: Colors.grey.shade600,
                                         menulist.icon,
                                       ),
                                       title: Text(
                                         menulist.name.toString(),
                                         style: TextStyle(
                                           fontFamily: 'acme',
-                                          fontSize: 25.r,
+                                          fontSize: 23.r,
                                           shadows: [
                                             Shadow(
                                                 color: Colors.white,
@@ -131,11 +101,9 @@ class MenuScreen extends StatelessWidget {
                                                 blurRadius: 3.r)
                                           ],
                                           fontWeight: FontWeight.w400,
-                                          color: Colors.black87,
+                                          color: Colors.black,
                                         ),
                                       ),
-                                      trailing: Icon(Icons.arrow_forward_ios,
-                                          color: Colors.blueGrey, size: 25.r),
                                     ),
                                   ),
                                 ],

@@ -24,13 +24,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
           ),
           SafeArea(
             child: Column(
@@ -45,14 +39,9 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
@@ -62,13 +51,8 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                           fontSize: 30.r,
                           fontFamily: 'acme',
                           fontWeight: FontWeight.w500,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
-                          color: Colors.blueGrey[500],
+
+                          color: Colors.black,
                         ),
                       ),
                       Spacer(),
@@ -134,14 +118,8 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                         borderRadius:
                                             BorderRadius.circular(20.r),
                                         border: Border.all(
-                                            width: 3.r, color: Colors.blueGrey),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black,
-                                            offset: Offset(6.r, 6.r),
-                                            blurRadius: 10.r,
-                                          ),
-                                        ],
+                                            width: 4.r, color: Colors.grey),
+
                                       ),
                                       child: Padding(
                                         padding: EdgeInsets.all(10.r),
@@ -161,7 +139,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                           leading: Image.asset(
                                             Assets.imagesDice,
                                             height: 36.r,
-                                            color: Colors.blueGrey[800],
+                                            color: Colors.grey[700],
 
                                           ),
                                           title: Text(

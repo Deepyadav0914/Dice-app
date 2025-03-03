@@ -24,16 +24,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Stack(
+
       children: [
         Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.white, Colors.blueGrey],
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-            ),
-          ),
+        color: Color(0xFFFAF6E9),
           child: Center(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -54,3 +50,4 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+

@@ -20,13 +20,7 @@ class _FaqsScreenState extends State<FaqsScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
           ),
           SafeArea(
             child: Column(
@@ -41,14 +35,9 @@ class _FaqsScreenState extends State<FaqsScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
@@ -58,13 +47,8 @@ class _FaqsScreenState extends State<FaqsScreen> {
                           fontSize: 30.r,
                           fontFamily: 'acme',
                           fontWeight: FontWeight.w500,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
-                          color: Colors.blueGrey[500],
+
+                          color: Colors.black,
                         ),
                       ),
                       Spacer(),

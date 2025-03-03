@@ -31,13 +31,7 @@ class _StickersScreenState extends State<StickersScreen> {
             Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.white, Colors.blueGrey],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
+              color: Color(0xFFFAF6E9),
             ),
             SafeArea(
               child: Column(children: [
@@ -51,14 +45,9 @@ class _StickersScreenState extends State<StickersScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
@@ -68,13 +57,8 @@ class _StickersScreenState extends State<StickersScreen> {
                           fontSize: 30.r,
                           fontFamily: 'acme',
                           fontWeight: FontWeight.w500,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
-                          color: Colors.blueGrey[500],
+
+                          color: Colors.black,
                         ),
                       ),
                       Spacer(),
@@ -135,7 +119,7 @@ class _StickersScreenState extends State<StickersScreen> {
 
                                   return Padding(
                                     padding: EdgeInsets.symmetric(
-                                        vertical: 9.r, horizontal: 12.r),
+                                        vertical: 6.r, horizontal: 10.r),
                                     child: GestureDetector(
                                       onTap: () {},
                                       child: Container(
@@ -144,20 +128,18 @@ class _StickersScreenState extends State<StickersScreen> {
                                           borderRadius:
                                               BorderRadius.circular(20.r),
                                           border: Border.all(
-                                              width: 3.r,
-                                              color: Colors.blueGrey),
+                                              width: 4.r,
+                                              color: Colors.grey),
                                         ),
-                                        child: Center(
-                                          child: CachedNetworkImage(
-                                            placeholder: (context, url) =>
-                                                LoadingAnimationWidget
-                                                    .threeArchedCircle(
-                                              color: Colors.black45,
-                                              size: 30.r,
-                                            ),
-                                            imageUrl:
-                                                allstickers[index].toString(),
+                                        child: CachedNetworkImage(
+                                          placeholder: (context, url) =>
+                                              LoadingAnimationWidget
+                                                  .threeArchedCircle(
+                                            color: Colors.black45,
+                                            size: 30.r,
                                           ),
+                                          imageUrl:
+                                              allstickers[index].toString(),
                                         ),
                                       ),
                                     ),

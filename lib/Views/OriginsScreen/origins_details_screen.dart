@@ -21,13 +21,7 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
           Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
           ),
           SafeArea(
             child: Padding(
@@ -41,30 +35,20 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
                       Text(
                         'Origins',
                         style: TextStyle(
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           fontWeight: FontWeight.w500,
                           fontSize: 30.r,
                           fontFamily: 'acme',
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
@@ -75,14 +59,8 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(19.r),
-                      border: Border.all(width: 4.r, color: Colors.white10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black,
-                          offset: Offset(7.r, 6.r),
-                          blurRadius: 8.r,
-                        ),
-                      ],
+                      border: Border.all(width: 4.r, color: Colors.grey),
+
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15.r),

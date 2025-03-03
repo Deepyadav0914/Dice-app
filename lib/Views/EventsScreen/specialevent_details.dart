@@ -23,13 +23,7 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
         children: [
           // Background Gradient
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
           ),
 
           SafeArea(
@@ -46,14 +40,9 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r),
-                          ],
+
                         ),
                       ),
                       Spacer(),
@@ -63,13 +52,8 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
                           fontSize: 30.r,
                           fontFamily: 'acme',
                           fontWeight: FontWeight.w500,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r),
-                          ],
-                          color: Colors.blueGrey[500],
+
+                          color: Colors.black,
                         ),
                       ),
                       Spacer(),
@@ -183,11 +167,8 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(22.r),
-          border: Border.all(width: 3.r, color: Colors.blueGrey),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black, offset: Offset(6.r, 6.r), blurRadius: 10.r)
-          ],
+          border: Border.all(width: 4.r, color: Colors.grey),
+
         ),
         child: ListTile(
           leading: CircleAvatar(
@@ -217,11 +198,8 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(22.r),
-          border: Border.all(width: 3.r, color: Colors.blueGrey),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black, offset: Offset(6.r, 6.r), blurRadius: 10.r)
-          ],
+          border: Border.all(width: 4.r, color: Colors.grey),
+
         ),
         child: Padding(
           padding: EdgeInsets.all(8.r),

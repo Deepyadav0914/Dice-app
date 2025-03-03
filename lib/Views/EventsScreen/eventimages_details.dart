@@ -21,13 +21,7 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
           ),
           SafeArea(
             child: Column(
@@ -42,14 +36,9 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
@@ -59,13 +48,8 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                           fontSize: 30.r,
                           fontFamily: 'acme',
                           fontWeight: FontWeight.w500,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
-                          color: Colors.blueGrey[500],
+
+                          color: Colors.black,
                         ),
                       ),
                       Spacer(),
@@ -112,14 +96,8 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                                         borderRadius:
                                             BorderRadius.circular(19.r),
                                         border: Border.all(
-                                            width: 4.r, color: Colors.white10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.black,
-                                            offset: Offset(7.r, 6.r),
-                                            blurRadius: 8.r,
-                                          ),
-                                        ],
+                                            width: 4.r, color: Colors.grey),
+
                                       ),
                                       child: ClipRRect(
                                         borderRadius:

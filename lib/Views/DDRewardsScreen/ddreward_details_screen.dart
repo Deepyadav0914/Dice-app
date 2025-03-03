@@ -30,18 +30,13 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
           Container(
             height: double.infinity,
             width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blueGrey],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+            color: Color(0xFFFAF6E9),
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 15.r, horizontal: 15.r),
+              padding: EdgeInsets.symmetric( horizontal: 15.r),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -50,90 +45,84 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                         onPressed: () => Get.back(),
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           size: 30.r,
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
                       Text(
                         'DD Reward',
                         style: TextStyle(
-                          color: Colors.blueGrey[500],
+                          color: Colors.black,
                           fontWeight: FontWeight.w500,
                           fontSize: 30.r,
                           fontFamily: 'acme',
-                          shadows: [
-                            Shadow(
-                                color: Colors.black,
-                                offset: Offset(1.r, 1.r),
-                                blurRadius: 3.r)
-                          ],
+
                         ),
                       ),
                       Spacer(),
                     ],
                   ),
-                  10.verticalSpace,
                   Center(
                     child: Image.asset(
-                      Assets.imagesReward,
-                      height: 260.r,
+                      Assets.imagesDice,
+                      color: Colors.grey[700],
+                      height: 150.r,
                     ),
                   ),
-                  Text(
-                    controller.name,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'acme',
-                      fontSize: 28.r,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                            color: Colors.white,
-                            offset: Offset(1.r, 1.r),
-                            blurRadius: 3.r)
-                      ],
-                    ),
-                  ),
-                  10.verticalSpace,
-                  Text(
-                    controller.formattedDate,
-                    style: TextStyle(
-                      fontSize: 28.r,
-                      fontFamily: 'acme',
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                            color: Colors.white,
-                            offset: Offset(1.r, 1.r),
-                            blurRadius: 3.r)
-                      ],
-                    ),
-                  ),
-                  20.verticalSpace,
-                  Text(
-                    controller.description,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 22.r,
-                      fontFamily: 'acme',
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                            color: Colors.white,
-                            offset: Offset(1.r, 1.r),
-                            blurRadius: 3.r)
-                      ],
-                    ),
-                  ),
+                  Container(
+                      width: double.infinity,
+
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                            width: 4.r, color: Colors.grey),
+                      ),
+                      margin: EdgeInsets.all(4.r),
+                      padding: EdgeInsets.all(12.r),
+                      child: Column(
+                        children: [
+                          Center(
+                            child: Text(
+                              controller.formattedDate,
+                              style: TextStyle(
+                                fontSize: 25.r,
+                                fontFamily: 'acme',
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                      color: Colors.white,
+                                      offset: Offset(1.r, 1.r),
+                                      blurRadius: 3.r)
+                                ],
+                              ),
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey,
+                            thickness: 3.r,
+                          ),
+                          Text(
+                            controller.description,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 22.r,
+                              fontFamily: 'acme',
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold,
+                              shadows: [
+                                Shadow(
+                                    color: Colors.white,
+                                    offset: Offset(1.r, 1.r),
+                                    blurRadius: 3.r)
+                              ],
+                            ),
+                          ),
+                        ],
+                      )),
                   20.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -145,41 +134,114 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                             : () {
                                 Get.dialog(
                                   AlertDialog(
-                                    title: Text('Confirm Claim'),
-                                    content: Text(
-                                        'Are you sure you want to claim this reward?'),
+                                    backgroundColor: Colors.yellow.shade50,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                        side: BorderSide(
+                                            color: Colors.white, width: 10.r)),
+                                    title: Center(
+                                        child: Text('REWARD',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold))),
+                                    content: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Image.asset(
+                                              Assets.imagesDice,
+                                              height: 35.r,
+                                              color: Colors.grey[700],
+                                              fit: BoxFit.cover,
+                                            ),
+                                            8.horizontalSpace,
+                                            Text(controller.name,
+                                                style: TextStyle(
+                                                    fontSize: 20.r,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ],
+                                        ),
+                                        15.verticalSpace,
+                                        Container(
+                                          padding: EdgeInsets.all(8),
+                                          child: Center(
+                                              child: Text(
+                                            "Are you sure you want to claim this reward?",
+                                            style: TextStyle(
+                                                fontSize: 14.r,
+                                                fontWeight: FontWeight.w500),
+                                          )),
+                                        )
+                                      ],
+                                    ),
                                     actions: [
-                                      TextButton(
-                                        onPressed: () => Get.back(),
-                                        child: Text('Cancel'),
-                                      ),
-                                      TextButton(
-                                        onPressed: () {
-                                          setState(() {
-                                            claimedRewards[uniqueKey] = true;
-                                            box.write("claimedRewards",
-                                                claimedRewards);
-                                          });
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          TextButton(
+                                            onPressed: () => Get.back(),
+                                            style: TextButton.styleFrom(
+                                              backgroundColor: Colors.grey,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.r),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              "CLOSE",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16.r),
+                                            ),
+                                          ),
+                                          TextButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                claimedRewards[uniqueKey] =
+                                                    true;
+                                                box.write("claimedRewards",
+                                                    claimedRewards);
+                                              });
 
-                                          Get.back();
-                                          Get.snackbar(
-                                            "Success!",
-                                            "You have collected ${controller.name}!",
-                                            snackPosition: SnackPosition.TOP,
-                                            icon: Icon(Icons.done_outline,
-                                                color: Colors.white),
-                                            duration:
-                                                const Duration(seconds: 3),
-                                            backgroundColor: Colors.blueGrey,
-                                            colorText: Colors.white,
-
-                                          );
-                                        },
-                                        child: Text('Claim'),
-                                      ),
+                                              Get.back();
+                                              Get.snackbar(
+                                                "Success!",
+                                                "You have collected ${controller.name}!",
+                                                snackPosition:
+                                                    SnackPosition.TOP,
+                                                icon: Icon(Icons.done_outline,
+                                                    color: Colors.white),
+                                                duration:
+                                                    const Duration(seconds: 3),
+                                                backgroundColor:
+                                                    Colors.blueGrey,
+                                                colorText: Colors.white,
+                                              );
+                                            },
+                                            style: TextButton.styleFrom(
+                                              backgroundColor: Colors.green,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              "CLAIM",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16.r),
+                                            ),
+                                          ),
+                                        ],
+                                      )
                                     ],
                                   ),
                                 );
+                                // Get.dialog(showDialogs(context));
                               },
                       ),
                       15.horizontalSpace,
@@ -196,26 +258,14 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
   }
 
   Widget _buildActionButton(String label, VoidCallback? onPressed) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.brown[400],
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black,
-            offset: Offset(2.r, 6.r),
-            blurRadius: 4.r,
-          ),
-        ],
-      ),
-      margin: EdgeInsets.symmetric(vertical: 4.r),
-      child: GestureDetector(
+    return GestureDetector(
         onTap: onPressed,
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.horizontal(),
+              borderRadius: BorderRadius.circular(20.r),
               color: Colors.white,
-              border: Border.all(color: Colors.black, width: 3.r)),
-          margin: EdgeInsets.all(3.r),
+              border: Border.all(color: Colors.grey, width: 4.r)),
+          margin: EdgeInsets.all(4.r),
           child: Center(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 5.r, horizontal: 30.r),
@@ -231,7 +281,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }

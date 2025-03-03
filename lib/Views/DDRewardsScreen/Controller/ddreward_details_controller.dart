@@ -30,7 +30,7 @@ class DDRewardDetailController extends GetxController {
   String get formattedDate => _formatDate(date.value);
 
   String _formatDate(String inputDate) {
-    DateTime input = DateFormat('dd-MM-yyyy').parse(inputDate);
-    return DateFormat('d MMM y').format(input);
+    DateTime input = DateFormat('MMMM, dd').parse(inputDate);
+    return DateFormat('EEEE, MMM dd').format(input);
   }
 }
