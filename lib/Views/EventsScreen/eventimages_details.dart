@@ -104,28 +104,33 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               20.verticalSpace,
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(19.r),
-                                  border: Border.all(width: 4.r, color: Colors.white10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      offset: Offset(7.r, 6.r),
-                                      blurRadius: 8.r,
+                              controller.eventImages.isEmpty
+                                  ? SizedBox()
+                                  : Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(19.r),
+                                        border: Border.all(
+                                            width: 4.r, color: Colors.white10),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black,
+                                            offset: Offset(7.r, 6.r),
+                                            blurRadius: 8.r,
+                                          ),
+                                        ],
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(15.r),
+                                        child: Image.network(
+                                          controller.eventImages,
+                                          height: 320.r,
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
                                     ),
-                                  ],
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15.r),
-                                  child: Image.network(
-                                    controller.eventImages,
-                                    height: 320.r,
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
                             ]);
                       },
                     );
@@ -138,6 +143,4 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
       ),
     );
   }
-
-
 }

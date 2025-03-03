@@ -164,14 +164,15 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                           Get.back();
                                           Get.snackbar(
                                             "Success!",
-                                            "You have collected ${controller.rewardCoins} coins!",
+                                            "You have collected ${controller.name}!",
                                             snackPosition: SnackPosition.TOP,
                                             icon: Icon(Icons.done_outline,
                                                 color: Colors.white),
                                             duration:
                                                 const Duration(seconds: 3),
-                                            backgroundColor: Colors.green,
+                                            backgroundColor: Colors.blueGrey,
                                             colorText: Colors.white,
+
                                           );
                                         },
                                         child: Text('Claim'),
