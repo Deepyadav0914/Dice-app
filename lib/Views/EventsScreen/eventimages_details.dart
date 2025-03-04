@@ -46,8 +46,8 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                         'Event Image',
                         style: TextStyle(
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-                          fontWeight: FontWeight.w500,
+                          fontFamily: 'ReemKufi',
+                          fontWeight: FontWeight.w600,
 
                           color: Colors.black,
                         ),

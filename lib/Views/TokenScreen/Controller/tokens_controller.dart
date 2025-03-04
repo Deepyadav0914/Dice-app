@@ -5,7 +5,8 @@ import '../../../Model/tokens_model.dart';
 class TokensController extends GetxController {
   var tokenData = TokensModel(tokensData: []).obs;
   RxBool isLoading = true.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

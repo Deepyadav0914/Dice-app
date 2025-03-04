@@ -5,7 +5,8 @@ import '../../../Model/origins_model.dart';
 class OriginsController extends GetxController {
   var originsData = OriginsModel(origins: []).obs;
   RxBool isLoading = true.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

@@ -28,11 +28,7 @@ class DDrewardController extends GetxController {
       isLoading(false);
     }
   }
-  //
-  // String formatDate(int timestamp) {
-  //   DateTime date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
-  //   return DateFormat('dd-MM-yyyy').format(date).toLowerCase();
-  // }
+
   String formatDate(int timestamp) {
     DateTime date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
     return DateFormat('MMMM, dd').format(date); // Example output: "March 2"

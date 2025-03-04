@@ -5,7 +5,8 @@ import '../../../Model/shield_model.dart';
 class ShieldController extends GetxController {
   var ShieldData = ShieldModel(shieldData: []).obs;
   RxBool isLoading = true.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

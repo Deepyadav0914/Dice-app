@@ -7,7 +7,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'Controller/ddreward_controller.dart';
 
 class DDrewardScreen extends StatefulWidget {
-   static const String routeName = '/DDrewardScreen';
+  static const String routeName = '/DDrewardScreen';
 
   const DDrewardScreen({super.key});
 
@@ -41,7 +41,6 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                           Icons.arrow_back_ios,
                           color: Colors.black,
                           size: 30.r,
-
                         ),
                       ),
                       Spacer(),
@@ -49,9 +48,8 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                         'DD Reward',
                         style: TextStyle(
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-                          fontWeight: FontWeight.w500,
-
+                          fontFamily: 'ReemKufi',
+                          fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
                       ),
@@ -97,8 +95,8 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                   date,
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontFamily: 'acme',
-                                    fontSize: 25.r,
+                                    fontFamily: 'VarelaRound',
+                                    fontSize: 23.r,
                                     shadows: [
                                       Shadow(
                                           color: Colors.white,
@@ -119,7 +117,6 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                             BorderRadius.circular(20.r),
                                         border: Border.all(
                                             width: 4.r, color: Colors.grey),
-
                                       ),
                                       child: Padding(
                                         padding: EdgeInsets.all(10.r),
@@ -140,20 +137,19 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                             Assets.imagesDice,
                                             height: 36.r,
                                             color: Colors.grey[700],
-
                                           ),
                                           title: Text(
                                             reward.name.toString(),
                                             style: TextStyle(
-                                              fontFamily: 'acme',
-                                              fontSize: 25.r,
-                                              fontWeight: FontWeight.w400,
+                                              fontFamily: 'VarelaRound',
+                                              fontSize: 22.r,
+                                              fontWeight: FontWeight.w600,
                                               color: Colors.black87,
                                             ),
                                           ),
                                           trailing: Icon(
                                               Icons.arrow_forward_ios,
-                                              color: Colors.blueGrey,
+                                              color: Colors.black,
                                               size: 25.r),
                                         ),
                                       ),

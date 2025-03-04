@@ -35,7 +35,6 @@ class _ShieldScreenState extends State<ShieldScreen> {
                       Icons.arrow_back_ios,
                       color: Colors.black,
                       size: 30.r,
-
                     ),
                   ),
                   Spacer(),
@@ -43,9 +42,8 @@ class _ShieldScreenState extends State<ShieldScreen> {
                     'Shield',
                     style: TextStyle(
                       fontSize: 30.r,
-                      fontFamily: 'acme',
-                      fontWeight: FontWeight.w500,
-
+                      fontFamily: 'ReemKufi',
+                      fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
@@ -80,9 +78,8 @@ class _ShieldScreenState extends State<ShieldScreen> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20.r),
-                              border: Border.all(
-                                  width: 4.r, color: Colors.grey),
-
+                              border:
+                                  Border.all(width: 4.r, color: Colors.grey),
                             ),
                             child: Padding(
                               padding: EdgeInsets.all(7.r),
@@ -93,23 +90,22 @@ class _ShieldScreenState extends State<ShieldScreen> {
                                         'item': item,
                                         'index': index
                                       })?.then(
-                                        (_) {
+                                    (_) {
                                       setState(() {});
                                     },
                                   );
-
                                 },
                                 title: Text(
                                   item.name.toString(),
                                   style: TextStyle(
-                                    fontFamily: 'acme',
-                                    fontSize: 22.r,
-                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'VarelaRound',
+                                    fontSize: 21.r,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.black87,
                                   ),
                                 ),
                                 trailing: Icon(Icons.arrow_forward_ios,
-                                    color: Colors.grey[900], size: 25.r),
+                                    color: Colors.black, size: 25.r),
                               ),
                             ),
                           ),

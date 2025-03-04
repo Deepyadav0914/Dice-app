@@ -37,7 +37,6 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                           Icons.arrow_back_ios,
                           color: Colors.black,
                           size: 30.r,
-
                         ),
                       ),
                       Spacer(),
@@ -45,10 +44,9 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                         'Origins',
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-
+                          fontFamily: 'ReemKufi',
                         ),
                       ),
                       Spacer(),
@@ -60,7 +58,6 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(19.r),
                       border: Border.all(width: 4.r, color: Colors.grey),
-
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15.r),
@@ -76,10 +73,10 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     controller.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 26.r,
-                      fontFamily: 'acme',
-                      color: Colors.blueGrey[1000],
-                      fontWeight: FontWeight.w500,
+                      fontSize: 25.r,
+                      fontFamily: 'VarelaRound',
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
                       shadows: [
                         Shadow(
                             color: Colors.white,
@@ -94,9 +91,9 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22.r,
-                      fontFamily: 'acme',
-                      color: Colors.blueGrey[900],
-                      fontWeight: FontWeight.w500,
+                      fontFamily: 'VarelaRound',
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600,
                       shadows: [
                         Shadow(
                             color: Colors.white,

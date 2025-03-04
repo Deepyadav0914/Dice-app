@@ -5,7 +5,8 @@ import '../../../Model/faqs_model.dart';
 class FaqsController extends GetxController {
   var FaqsData = FaqsModel(data: []).obs;
   RxBool isLoading = true.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

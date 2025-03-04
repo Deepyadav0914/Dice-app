@@ -34,7 +34,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric( horizontal: 15.r),
+              padding: EdgeInsets.symmetric(horizontal: 15.r),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -47,7 +47,6 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                           Icons.arrow_back_ios,
                           color: Colors.black,
                           size: 30.r,
-
                         ),
                       ),
                       Spacer(),
@@ -55,10 +54,9 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                         'DD Reward',
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-
+                          fontFamily: 'ReemKufi',
                         ),
                       ),
                       Spacer(),
@@ -71,14 +69,29 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                       height: 150.r,
                     ),
                   ),
+                  Center(
+                    child: Text(
+                      controller.name,
+                      style: TextStyle(
+                        fontSize: 25.r,
+                        fontFamily: 'VarelaRound',
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                        shadows: [
+                          Shadow(
+                              color: Colors.white,
+                              offset: Offset(1.r, 1.r),
+                              blurRadius: 3.r)
+                        ],
+                      ),
+                    ),
+                  ),
                   Container(
                       width: double.infinity,
-
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(
-                            width: 4.r, color: Colors.grey),
+                        border: Border.all(width: 4.r, color: Colors.grey),
                       ),
                       margin: EdgeInsets.all(4.r),
                       padding: EdgeInsets.all(12.r),
@@ -88,8 +101,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                             child: Text(
                               controller.formattedDate,
                               style: TextStyle(
-                                fontSize: 25.r,
-                                fontFamily: 'acme',
+                                fontSize: 23.r,
+                                fontFamily: 'VarelaRound',
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold,
                                 shadows: [
@@ -109,8 +122,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                             controller.description,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 22.r,
-                              fontFamily: 'acme',
+                              fontSize: 20.r,
+                              fontFamily: 'VarelaRound',
                               color: Colors.black87,
                               fontWeight: FontWeight.bold,
                               shadows: [
@@ -142,6 +155,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                     title: Center(
                                         child: Text('REWARD',
                                             style: TextStyle(
+                                              fontFamily: 'ReemKufi',
                                                 fontWeight: FontWeight.bold))),
                                     content: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -153,13 +167,14 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                             Image.asset(
                                               Assets.imagesDice,
                                               height: 35.r,
-                                              color: Colors.grey[700],
+                                              color: Colors.black,
                                               fit: BoxFit.cover,
                                             ),
                                             8.horizontalSpace,
                                             Text(controller.name,
                                                 style: TextStyle(
                                                     fontSize: 20.r,
+                                                    fontFamily: 'VarelaRound',
                                                     fontWeight:
                                                         FontWeight.bold)),
                                           ],
@@ -172,7 +187,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                             "Are you sure you want to claim this reward?",
                                             style: TextStyle(
                                                 fontSize: 14.r,
-                                                fontWeight: FontWeight.w500),
+                                                fontFamily: 'VarelaRound',
+                                                fontWeight: FontWeight.w600),
                                           )),
                                         )
                                       ],
@@ -195,6 +211,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                               "CLOSE",
                                               style: TextStyle(
                                                   color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'VarelaRound',
                                                   fontSize: 16.r),
                                             ),
                                           ),
@@ -218,7 +236,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                                 duration:
                                                     const Duration(seconds: 3),
                                                 backgroundColor:
-                                                    Colors.blueGrey,
+                                                    Colors.grey[600],
                                                 colorText: Colors.white,
                                               );
                                             },
@@ -233,6 +251,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                               "CLAIM",
                                               style: TextStyle(
                                                   color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'VarelaRound',
                                                   fontSize: 16.r),
                                             ),
                                           ),
@@ -259,29 +279,28 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
 
   Widget _buildActionButton(String label, VoidCallback? onPressed) {
     return GestureDetector(
-        onTap: onPressed,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.r),
-              color: Colors.white,
-              border: Border.all(color: Colors.grey, width: 4.r)),
-          margin: EdgeInsets.all(4.r),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 5.r, horizontal: 30.r),
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 24.r,
-                  fontFamily: 'acme',
-                  color: onPressed == null ? Colors.grey : Colors.black87,
-                  fontWeight: FontWeight.bold,
-                ),
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.r),
+            color: Colors.white,
+            border: Border.all(color: Colors.grey, width: 4.r)),
+        margin: EdgeInsets.all(4.r),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 5.r, horizontal: 30.r),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 24.r,
+                fontFamily: 'acme',
+                color: onPressed == null ? Colors.grey : Colors.black87,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
         ),
-      
+      ),
     );
   }
 }

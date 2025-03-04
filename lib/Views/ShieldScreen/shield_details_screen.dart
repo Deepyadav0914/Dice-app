@@ -1,4 +1,6 @@
+import 'package:dice_app/Generated/assets.dart';
 import 'package:dice_app/Views/ShieldScreen/Controller/shield_details_controller.dart';
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -50,28 +52,41 @@ class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
                         'Shield',
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-
+                          fontFamily: 'ReemKufi',
                         ),
                       ),
                       Spacer(),
                     ],
                   ),
-                  20.verticalSpace,
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(19.r),
-                      border: Border.all(width: 4.r, color: Colors.grey),
-
+                  10.verticalSpace,
+                  FlipCard(
+                    direction: FlipDirection.HORIZONTAL,
+                    front: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(width: 4.r, color: Colors.grey),
+                      ),
+                      height: 380.r,
+                      alignment: Alignment.center,
+                      width: 200.r,
+                      child: Image.asset(
+                        Assets.imagesShield,
+                      ),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.r),
+                    back: Container(
+                      height: 380.r,
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(width: 4.r, color: Colors.grey),
+                      ),
+                      alignment: Alignment.center,
+                      width: 220.r,
                       child: Image.network(
                         controller.image,
-                        height: 300.r,
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -81,10 +96,10 @@ class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
                     controller.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 26.r,
-                      fontFamily: 'acme',
-                      color: Colors.blueGrey[1000],
-                      fontWeight: FontWeight.w500,
+                      fontSize: 25.r,
+                      fontFamily: 'VarelaRound',
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
                       shadows: [
                         Shadow(
                             color: Colors.white,
@@ -99,9 +114,9 @@ class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22.r,
-                      fontFamily: 'acme',
-                      color: Colors.blueGrey[900],
-                      fontWeight: FontWeight.w500,
+                      fontFamily: 'VarelaRound',
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600,
                       shadows: [
                         Shadow(
                             color: Colors.white,

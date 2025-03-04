@@ -5,7 +5,8 @@ class TokensDetailController extends GetxController {
   RxList<TokensDatum> item = <TokensDatum>[].obs;
 
   RxInt index = 0.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

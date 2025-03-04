@@ -37,17 +37,15 @@ class _FaqsScreenState extends State<FaqsScreen> {
                           Icons.arrow_back_ios,
                           color: Colors.black,
                           size: 30.r,
-
                         ),
                       ),
                       Spacer(),
                       Text(
-                        'FAQS',
+                        'Faqs',
                         style: TextStyle(
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-                          fontWeight: FontWeight.w500,
-
+                          fontFamily: 'ReemKufi',
+                          fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
                       ),
@@ -119,11 +117,7 @@ class _FaqsScreenState extends State<FaqsScreen> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(width: 3.r, color: Colors.blueGrey),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black, offset: Offset(6.r, 6.r), blurRadius: 10.r)
-          ],
+          border: Border.all(width: 4.r, color: Colors.grey),
         ),
         child: Padding(
           padding: EdgeInsets.all(10.r),
@@ -132,18 +126,18 @@ class _FaqsScreenState extends State<FaqsScreen> {
             title: Text(
               title,
               style: TextStyle(
-                fontFamily: 'acme',
-                fontSize: 23.r,
-                fontWeight: FontWeight.w400,
-                color: Colors.teal[700],
+                fontFamily: 'VarelaRound',
+                fontSize: 24.r,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
               ),
             ),
             subtitle: Text(
               subtitle,
               style: TextStyle(
-                fontFamily: 'acme',
+                fontFamily: 'VarelaRound',
                 fontSize: 20.r,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),

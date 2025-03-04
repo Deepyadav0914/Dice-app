@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
 class MainMenuController extends GetxController {
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 }

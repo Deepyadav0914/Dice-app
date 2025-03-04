@@ -4,7 +4,8 @@ import '../../../Model/events_Model.dart';
 class SpecialEventController extends GetxController {
   RxList<EventDatum> event = <EventDatum>[].obs;
   RxInt index = 0.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
   RxBool isLoading = false.obs;
 
   @override

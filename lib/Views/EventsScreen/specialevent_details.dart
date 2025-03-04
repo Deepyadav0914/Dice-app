@@ -50,8 +50,8 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
                         'Special Events',
                         style: TextStyle(
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-                          fontWeight: FontWeight.w500,
+                          fontFamily: 'ReemKufi',
+                          fontWeight: FontWeight.w600,
 
                           color: Colors.black,
                         ),
@@ -94,12 +94,12 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
                           children: [
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 10.r, horizontal: 15.r),
+                                  vertical: 10.r, horizontal: 10.r),
                               child: Text(
                                 'Description',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontFamily: 'acme',
+                                  fontFamily: 'VarelaRound',
                                   fontSize: 25.r,
                                   fontWeight: FontWeight.bold,
                                   shadows: [
@@ -117,12 +117,12 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 10.r, horizontal: 15.r),
+                                  vertical: 10.r, horizontal: 10.r),
                               child: Text(
                                 'SpecialEvent Data',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontFamily: 'acme',
+                                  fontFamily: 'VarelaRound',
                                   fontSize: 25.r,
                                   fontWeight: FontWeight.bold,
                                   shadows: [
@@ -162,7 +162,7 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
 
   Widget _buildEventCard({required String title, required String images}) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 15.r),
+      padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 10.r),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -173,6 +173,7 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
         child: ListTile(
           leading: CircleAvatar(
             radius: 32.r,
+            backgroundColor: Colors.white,
             child: Image.network(
               images,
             ),
@@ -180,9 +181,9 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
           title: Text(
             title,
             style: TextStyle(
-              fontFamily: 'acme',
+              fontFamily: 'VarelaRound',
               fontSize: 19.r,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w600,
               color: Colors.black87,
             ),
           ),
@@ -207,9 +208,9 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
             title: Text(
               title,
               style: TextStyle(
-                fontFamily: 'acme',
+                fontFamily: 'VarelaRound',
                 fontSize: 19.r,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),

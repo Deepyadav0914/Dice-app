@@ -5,7 +5,8 @@ class OriginsDetailController extends GetxController {
   RxList<Origin> item = <Origin>[].obs;
 
   RxInt index = 0.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

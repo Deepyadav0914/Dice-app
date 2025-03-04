@@ -45,8 +45,8 @@ class _TournamentScreenState extends State<TournamentScreen> {
                         'Tournaments',
                         style: TextStyle(
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-                          fontWeight: FontWeight.w500,
+                          fontFamily: 'ReemKufi',
+                          fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
                       ),
@@ -96,7 +96,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
                                 'Description',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontFamily: 'acme',
+                                  fontFamily: 'VarelaRound',
                                   fontSize: 25.r,
                                   fontWeight: FontWeight.bold,
                                   shadows: [
@@ -120,7 +120,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
                                 'Tournament Data',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontFamily: 'acme',
+                                  fontFamily: 'VarelaRound',
                                   fontSize: 25.r,
                                   fontWeight: FontWeight.bold,
                                   shadows: [
@@ -170,9 +170,9 @@ class _TournamentScreenState extends State<TournamentScreen> {
             title: Text(
               title,
               style: TextStyle(
-                fontFamily: 'acme',
+                fontFamily: 'VarelaRound',
                 fontSize: 21.r,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),
@@ -202,18 +202,18 @@ class _TournamentScreenState extends State<TournamentScreen> {
             title: Text(
               title,
               style: TextStyle(
-                fontFamily: 'acme',
+                fontFamily: 'VarelaRound',
                 fontSize: 19.r,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),
             subtitle: Text(
               subtitle,
               style: TextStyle(
-                fontFamily: 'acme',
+                fontFamily: 'VarelaRound',
                 fontSize: 19.r,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),

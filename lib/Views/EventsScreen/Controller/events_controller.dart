@@ -5,6 +5,8 @@ import '../../../Model/events_Model.dart';
 class EventsController extends GetxController {
   var eventsData = EventsModel(eventData: []).obs;
   RxBool isLoading = false.obs;
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

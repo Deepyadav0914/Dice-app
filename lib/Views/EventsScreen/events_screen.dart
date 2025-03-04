@@ -47,8 +47,8 @@ class _EventsScreenState extends State<EventsScreen> {
                         'Events',
                         style: TextStyle(
                           fontSize: 30.r,
-                          fontFamily: 'acme',
-                          fontWeight: FontWeight.w500,
+                          fontFamily: 'ReemKufi',
+                          fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
                       ),
@@ -91,8 +91,8 @@ class _EventsScreenState extends State<EventsScreen> {
                                 event.eventDate.toString(),
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontFamily: 'acme',
-                                  fontSize: 25.r,
+                                  fontFamily: 'VarelaRound',
+                                  fontSize: 24.r,
                                   fontWeight: FontWeight.bold,
                                   shadows: [
                                     Shadow(
@@ -149,9 +149,9 @@ class _EventsScreenState extends State<EventsScreen> {
             title: Text(
               title,
               style: TextStyle(
-                fontFamily: 'acme',
-                fontSize: 22.r,
-                fontWeight: FontWeight.w400,
+                fontFamily: 'VarelaRound',
+                fontSize: 21.r,
+                fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
             ),

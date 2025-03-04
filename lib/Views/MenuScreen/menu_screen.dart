@@ -31,14 +31,14 @@ class MenuScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(18.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('Welcome',
                             style: TextStyle(
-                                fontSize: 26, fontWeight: FontWeight.bold)),
-                        Icon(Icons.account_circle, size: 35),
+                                fontSize: 30.r,color: Colors.black,fontFamily: 'ReemKufi', fontWeight: FontWeight.w600)),
+                        Icon(Icons.account_circle, size: 38),
                       ],
                     ),
                   ),
@@ -92,15 +92,15 @@ class MenuScreen extends StatelessWidget {
                                       title: Text(
                                         menulist.name.toString(),
                                         style: TextStyle(
-                                          fontFamily: 'acme',
-                                          fontSize: 23.r,
+                                          fontFamily: 'VarelaRound',
+                                          fontSize: 22.r,
                                           shadows: [
                                             Shadow(
                                                 color: Colors.white,
                                                 offset: Offset(2.r, 1.r),
                                                 blurRadius: 3.r)
                                           ],
-                                          fontWeight: FontWeight.w400,
+                                          fontWeight: FontWeight.w600,
                                           color: Colors.black,
                                         ),
                                       ),

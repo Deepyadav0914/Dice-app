@@ -45,9 +45,9 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                         'Tokens',
                         style: TextStyle(
                           color: Colors.black,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 30.r,
-                          fontFamily: 'acme',
+                          fontFamily: 'ReemKufi',
 
 
                         ),
@@ -80,10 +80,10 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                     controller.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 26.r,
-                      fontFamily: 'acme',
-                      color: Colors.blueGrey[1000],
-                      fontWeight: FontWeight.w500,
+                      fontSize: 25.r,
+                      fontFamily: 'VarelaRound',
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
                       shadows: [
                         Shadow(
                             color: Colors.white,
@@ -97,10 +97,10 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                     controller.description,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 22.r,
-                      fontFamily: 'acme',
-                      color: Colors.blueGrey[900],
-                      fontWeight: FontWeight.w500,
+                      fontSize: 21.r,
+                      fontFamily: 'VarelaRound',
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600,
                       shadows: [
                         Shadow(
                             color: Colors.white,

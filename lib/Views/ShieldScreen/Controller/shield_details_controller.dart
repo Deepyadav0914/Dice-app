@@ -5,7 +5,8 @@ class ShieldsController extends GetxController {
   RxList<ShieldDatum> item = <ShieldDatum>[].obs;
   RxString rewardKey = ''.obs;
   RxInt index = 0.obs;
-  String Acme = 'acme';
+  String VarelaRound = 'VarelaRound';
+  String ReemKufi='ReemKufi';
 
   @override
   void onInit() {

@@ -1,112 +1,3 @@
-// import 'package:dice_app/Generated/assets.dart';
-// import 'package:flutter/material.dart';
-//
-// class OriginsScreen extends StatefulWidget {
-//   const OriginsScreen({super.key});
-//
-//   @override
-//   State<OriginsScreen> createState() => _OriginsScreenState();
-// }
-//
-// class _OriginsScreenState extends State<OriginsScreen> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Stack(
-//           children: [
-//             Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: GridView(
-//                   physics: AlwaysScrollableScrollPhysics(),
-//                   children: [
-//                     buildCard("Queen", Assets.imagesDice, 4, 0),
-//                     buildCard("Queen", Assets.imagesDice, 4, 0),
-//                     buildCard("Queen", Assets.imagesDice, 4, 0),
-//                   ],
-//                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                       crossAxisCount: 2)),
-//             ),
-//             // Main card
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-//
-//   Widget buildCard(String title, String imagePath, int number, int index) {
-//     return Transform.translate(
-//       offset: Offset(index * 10, index * 10), // Layer effect
-//       child: Card(
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(20),
-//         ),
-//         elevation: 8,
-//         child: Container(
-//           width: 180,
-//           height: 250,
-//           decoration: BoxDecoration(
-//             borderRadius: BorderRadius.circular(20),
-//             color: Colors.grey[200],
-//             image: DecorationImage(
-//               image: AssetImage(imagePath),
-//               fit: BoxFit.cover,
-//               colorFilter: ColorFilter.mode(
-//                   Colors.blueGrey.withOpacity(0.5), BlendMode.darken),
-//             ),
-//           ),
-//           child: Stack(
-//             children: [
-//               Positioned(
-//                 top: 10,
-//                 left: 10,
-//                 child: Text(
-//                   title,
-//                   style: const TextStyle(
-//                       fontSize: 20,
-//                       color: Colors.white,
-//                       fontWeight: FontWeight.bold),
-//                 ),
-//               ),
-//               Positioned(
-//                 top: 10,
-//                 right: 10,
-//                 child: CircleAvatar(
-//                   backgroundColor: Colors.white,
-//                   radius: 20,
-//                   child: Text(
-//                     "$number",
-//                     style: const TextStyle(
-//                         fontSize: 16, fontWeight: FontWeight.bold),
-//                   ),
-//                 ),
-//               ),
-//               Positioned(
-//                 bottom: 10,
-//                 left: 10,
-//                 right: 10,
-//                 child: Container(
-//                   padding: EdgeInsets.all(8),
-//                   decoration: BoxDecoration(
-//                     color: Colors.grey.withOpacity(0.9),
-//                     borderRadius: BorderRadius.circular(10),
-//                   ),
-//                   child: const Text(
-//                     "Lorem ipsum dolor sit amet, consectetur",
-//                     style: TextStyle(fontSize: 14, color: Colors.white),
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-//
-
 import 'package:dice_app/Views/OriginsScreen/Controller/origins_screen_controller.dart';
 import 'package:dice_app/Views/OriginsScreen/origins_details_screen.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +27,7 @@ class _OriginsScreenState extends State<OriginsScreen> {
         SafeArea(
           child: Column(children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 15.r, horizontal: 15.r),
+              padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 15.r),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -146,7 +37,6 @@ class _OriginsScreenState extends State<OriginsScreen> {
                       Icons.arrow_back_ios,
                       color: Colors.black,
                       size: 30.r,
-
                     ),
                   ),
                   Spacer(),
@@ -154,9 +44,8 @@ class _OriginsScreenState extends State<OriginsScreen> {
                     'Origins',
                     style: TextStyle(
                       fontSize: 30.r,
-                      fontFamily: 'acme',
-                      fontWeight: FontWeight.w500,
-
+                      fontFamily: 'ReemKufi',
+                      fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
@@ -182,7 +71,7 @@ class _OriginsScreenState extends State<OriginsScreen> {
                     final item = data[index];
                     return Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 8.r, horizontal: 15.r),
+                          EdgeInsets.symmetric(vertical: 6.r, horizontal: 15.r),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -190,9 +79,8 @@ class _OriginsScreenState extends State<OriginsScreen> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20.r),
-                              border: Border.all(
-                                  width: 4.r, color: Colors.grey),
-
+                              border:
+                                  Border.all(width: 4.r, color: Colors.grey),
                             ),
                             child: Padding(
                               padding: EdgeInsets.all(8.r),
@@ -211,9 +99,9 @@ class _OriginsScreenState extends State<OriginsScreen> {
                                 title: Text(
                                   item.category.toString(),
                                   style: TextStyle(
-                                    fontFamily: 'acme',
-                                    fontSize: 22.r,
-                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'VarelaRound',
+                                    fontSize: 21.r,
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.black87,
                                   ),
                                 ),
