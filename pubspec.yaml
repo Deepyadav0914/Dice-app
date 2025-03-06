@@ -51,6 +51,7 @@ dependencies:
   confetti:
   flutter_flip_card:
   flip_card:
+  glassmorphism:
 
 
 dev_dependencies:
@@ -95,11 +96,10 @@ flutter:
     - family: VarelaRound
       fonts:
         - asset: assets/fonts/VarelaRound-Regular.ttf
-
   #         style: italic
-    - family: ReemKufi
-      fonts:
-        - asset: assets/fonts/ReemKufi-VariableFont_wght.ttf
+  # - family: VarelaRound
+  #   fonts:
+  #     - asset: assets/fonts/VarelaRound-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

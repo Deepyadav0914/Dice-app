@@ -2,12 +2,8 @@
 class Assets {
   Assets._();
 
-  static const String fontsAcmeRegular = 'assets/fonts/Acme-Regular.ttf';
-  static const String fontsReemKufiVariableFontWght = 'assets/fonts/ReemKufi-VariableFont_wght.ttf';
-  static const String fontsVarelaRoundRegular = 'assets/fonts/VarelaRound-Regular.ttf';
   static const String imagesDice = 'assets/images/dice.png';
   static const String imagesReward = 'assets/images/reward.png';
   static const String imagesShield = 'assets/images/shield.png';
   static const String imagesSplash = 'assets/images/splash.png';
-
 }
