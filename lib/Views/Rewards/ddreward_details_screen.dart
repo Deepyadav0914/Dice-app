@@ -6,6 +6,8 @@ import '../../main.dart';
 import 'Controller/ddreward_controller.dart';
 
 class DDRewardDetailScreen extends StatefulWidget {
+  static const String routeName = '/DDRewardDetailScreen';
+
   const DDRewardDetailScreen({super.key});
 
   @override
@@ -31,15 +33,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
             height: double.infinity,
             width: double.infinity,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0F2027),
-                  Color(0xFF203A43),
-                  Color(0xFF2C5364)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              image: DecorationImage(
+                  image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
             ),
           ),
           SafeArea(
@@ -74,9 +69,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                   ),
                   Center(
                     child: Image.asset(
-                      Assets.imagesDice,
-                      color: Colors.white,
-                      height: 150.r,
+                      Assets.imagesLogo,
+                      height: 220.r,
                     ),
                   ),
                   Center(
@@ -105,7 +99,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                             child: Text(
                               controller.formattedDate,
                               style: TextStyle(
-                                fontSize: 22.r,
+                                fontSize: 20.r,
                                 fontFamily: 'VarelaRound',
                                 color: Colors.black87,
                                 fontWeight: FontWeight.bold,
@@ -120,7 +114,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                             controller.description,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 19.r,
+                              fontSize: 18.r,
                               fontFamily: 'VarelaRound',
                               color: Colors.black87,
                               fontWeight: FontWeight.bold,
@@ -128,7 +122,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                           ),
                         ],
                       )),
-                  20.verticalSpace,
+                  10.verticalSpace,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -149,7 +143,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(25.r),
-                                          color: Colors.grey),
+                                          color: Colors.grey[600]),
                                       child: Text('REWARD',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
@@ -165,9 +159,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Image.asset(
-                                              Assets.imagesDice,
-                                              height: 30.r,
-                                              color: Colors.black,
+                                              Assets.imagesLogo,
+                                              height: 50.r,
                                               fit: BoxFit.cover,
                                             ),
                                             8.horizontalSpace,
@@ -202,7 +195,7 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                           TextButton(
                                             onPressed: () => Get.back(),
                                             style: TextButton.styleFrom(
-                                              backgroundColor: Colors.grey,
+                                              backgroundColor: Colors.grey[600],
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10.r),

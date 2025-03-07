@@ -7,6 +7,7 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'Controller/shield_screen_controller.dart';
 
 class ShieldsDetailScreen extends StatefulWidget {
+  static const String routeName = '/ShieldsDetailScreen';
   const ShieldsDetailScreen({super.key});
 
   @override
@@ -23,15 +24,8 @@ class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
         children: [
           Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0F2027),
-                  Color(0xFF203A43),
-                  Color(0xFF2C5364)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              image: DecorationImage(
+                  image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
             ),
           ),
           SafeArea(
@@ -64,7 +58,7 @@ class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
                   ),
                   20.verticalSpace,
                   FlipCard(
-                    direction: FlipDirection.HORIZONTAL,
+                    direction: FlipDirection.VERTICAL,
                     front: GlassmorphicContainer(
                       width: 220.r,
                       height: 380.r,
@@ -80,11 +74,26 @@ class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
                       borderGradient: LinearGradient(
                         colors: [Colors.white54, Colors.white10],
                       ),
-                      child: Center(
-                        child: Image.asset(
-                          Assets.imagesShield,
-                          fit: BoxFit.contain,
-                        ),
+                      child: Column(
+                        children: [
+                          Center(
+                            child: Image.asset(
+                              Assets.imagesLogo,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                          25.verticalSpace,
+                          Text(
+                            'Tap Here',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 24.r,
+                              color: Colors.white,
+                              fontFamily: 'VarelaRound',
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     back: GlassmorphicContainer(

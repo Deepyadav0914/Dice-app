@@ -1,3 +1,4 @@
+import 'package:dice_app/Generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,6 @@ class MenuScreen extends StatelessWidget {
 
   MenuScreen({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,15 +24,8 @@ class MenuScreen extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0F2027),
-                  Color(0xFF203A43),
-                  Color(0xFF2C5364)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              image: DecorationImage(
+                  image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
             ),
             child: SafeArea(
               child: Column(
@@ -78,7 +70,9 @@ class MenuScreen extends StatelessWidget {
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      image: DecorationImage(
+                                          image: AssetImage(Assets.imagesList),
+                                          fit: BoxFit.fill),
                                       borderRadius: BorderRadius.circular(20.r),
                                       border: Border.all(
                                           width: 4.r, color: Colors.grey),
@@ -88,6 +82,7 @@ class MenuScreen extends StatelessWidget {
                                     child: ListTile(
                                       onTap: () {
                                         if (index == 0) {
+                                          //Get.toNamed(DDrewardScreen.routeName);
                                           Get.to(() => DDrewardScreen());
                                         } else if (index == 1) {
                                           Get.to(() => StickersScreen());

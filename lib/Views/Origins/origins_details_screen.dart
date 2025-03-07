@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import '../../Generated/assets.dart';
 import 'Controller/origins_screen_controller.dart';
 
 class OriginsDetailScreen extends StatefulWidget {
+  static const String routeName = '/OriginsDetailScreen';
+
   const OriginsDetailScreen({super.key});
 
   @override
@@ -21,18 +24,9 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
       body: Stack(
         children: [
           Container(
-            height: double.infinity,
-            width: double.infinity,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0F2027),
-                  Color(0xFF203A43),
-                  Color(0xFF2C5364)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              image: DecorationImage(
+                  image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
             ),
           ),
           SafeArea(
@@ -65,13 +59,18 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     ],
                   ),
                   40.verticalSpace,
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15.r),
-                    child: CachedNetworkImage(
-                      imageUrl: controller.sticker,
-                      placeholder: (context, url) =>
-                          LoadingAnimationWidget.bouncingBall(
-                              color: Colors.white, size: 40.r),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(width: 3.r, color: Colors.white)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.r),
+                      child: CachedNetworkImage(
+                        imageUrl: controller.sticker,
+                        placeholder: (context, url) =>
+                            LoadingAnimationWidget.bouncingBall(
+                                color: Colors.white, size: 40.r),
+                      ),
                     ),
                   ),
                   30.verticalSpace,

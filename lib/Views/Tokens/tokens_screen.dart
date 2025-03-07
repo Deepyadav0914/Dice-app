@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import '../../Generated/assets.dart';
 import 'Controller/tokens_controller.dart';
 
 class TokensScreen extends StatefulWidget {
@@ -23,11 +24,8 @@ class _TokensScreenState extends State<TokensScreen> {
       body: Stack(children: [
         Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            image: DecorationImage(
+                image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
           ),
         ),
         SafeArea(
@@ -83,7 +81,8 @@ class _TokensScreenState extends State<TokensScreen> {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              image: DecorationImage(
+                                  image: AssetImage(Assets.imagesList), fit: BoxFit.fill),
                               borderRadius: BorderRadius.circular(20.r),
                               border:
                                   Border.all(width: 4.r, color: Colors.grey),
@@ -112,7 +111,7 @@ class _TokensScreenState extends State<TokensScreen> {
                                   ),
                                 ),
                                 trailing: Icon(Icons.arrow_forward_ios,
-                                    color: Colors.black, size: 25.r),
+                                    color: Colors.white, size: 25.r),
                               ),
                             ),
                           ),

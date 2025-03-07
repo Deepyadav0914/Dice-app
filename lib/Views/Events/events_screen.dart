@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import '../../Generated/assets.dart';
 import 'Controller/events_controller.dart';
 import 'eventimages_details.dart';
 
 class EventsScreen extends StatefulWidget {
+  static const String routeName = '/EventsScreen';
+
   const EventsScreen({super.key});
 
   @override
@@ -24,15 +27,8 @@ class _EventsScreenState extends State<EventsScreen> {
         children: [
           Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0F2027),
-                  Color(0xFF203A43),
-                  Color(0xFF2C5364)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              image: DecorationImage(
+                  image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
             ),
           ),
           SafeArea(
@@ -142,7 +138,8 @@ class _EventsScreenState extends State<EventsScreen> {
       padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 15.r),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          image: DecorationImage(
+              image: AssetImage(Assets.imagesList), fit: BoxFit.fill),
           borderRadius: BorderRadius.circular(22.r),
           border: Border.all(width: 4.r, color: Colors.grey),
         ),
@@ -159,6 +156,8 @@ class _EventsScreenState extends State<EventsScreen> {
                 color: Colors.black,
               ),
             ),
+            trailing: Icon(Icons.arrow_forward_ios,
+                color: Colors.white, size: 25.r),
           ),
         ),
       ),

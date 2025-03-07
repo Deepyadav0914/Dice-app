@@ -1,8 +1,8 @@
+import 'package:dice_app/Generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import '../../generated/assets.dart';
 import '../../main.dart';
 import 'Controller/ddreward_controller.dart';
 import 'ddreward_details_screen.dart';
@@ -24,14 +24,9 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
     return Scaffold(
       body: Stack(children: [
         Container(
-          height: double.infinity,
-          width: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            image: DecorationImage(
+                image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
           ),
         ),
         SafeArea(
@@ -126,7 +121,9 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                               return Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  image: DecorationImage(
+                                      image: AssetImage(Assets.imagesList),
+                                      fit: BoxFit.fill),
                                   borderRadius: BorderRadius.circular(20.r),
                                   border: Border.all(
                                       width: 4.r, color: Colors.grey),
@@ -135,15 +132,15 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                 child: ListTile(
                                   contentPadding: EdgeInsets.all(8.r),
                                   leading: Image.asset(
-                                    Assets.imagesDice,
-                                    height: 35.r,
-                                    color: Colors.grey[600],
+                                    Assets.imagesLogo,
+                                    fit: BoxFit.fill,
                                   ),
                                   title: Text(
                                     reward.name,
                                     style: TextStyle(
                                       fontFamily: 'VarelaRound',
                                       fontSize: 18.r,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -152,7 +149,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(25),
                                       ),
-                                      backgroundColor: Colors.blueGrey[300],
+                                      backgroundColor: Colors.grey[300],
                                       textStyle: TextStyle(
                                         fontSize: 18.r,
                                         fontFamily: 'VarelaRound',
@@ -167,7 +164,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                     child: Text(
                                       isClaimed ? 'Claimed' : 'Claim',
                                       style: const TextStyle(
-                                          color: Colors.black54),
+                                          color: Colors.black87),
                                     ),
                                   ),
                                   onTap: () {
