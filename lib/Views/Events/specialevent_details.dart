@@ -1,8 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'Controller/specialevent_controller.dart';
+import 'Controller/events_controller.dart';
 
 class SpecialEventScreen extends StatefulWidget {
   static const String routeName = '/SpecialEventScreen';
@@ -141,7 +142,7 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
                                     'EndDate : ${specialevent.endDate}'
                                     "\n"
                                     'Duration : ${specialevent.duration}',
-                              ),
+                              )
                           ],
                         );
                       },
@@ -166,18 +167,21 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
           border: Border.all(width: 4.r, color: Colors.grey),
         ),
         child: ListTile(
-          leading: CircleAvatar(
-            radius: 32.r,
-            backgroundColor: Colors.white,
-            child: Image.network(
-              images,
-            ),
-          ),
+          leading: images.isEmpty
+              ? SizedBox()
+              : CachedNetworkImage(
+                  imageUrl: images,
+                  placeholder: (context, url) =>
+                      LoadingAnimationWidget.threeArchedCircle(
+                    color: Colors.grey,
+                    size: 20.r,
+                  ),
+                ),
           title: Text(
             title,
             style: TextStyle(
               fontFamily: 'VarelaRound',
-              fontSize: 18.r,
+              fontSize: 16.r,
               fontWeight: FontWeight.w600,
               color: Colors.black87,
             ),
@@ -203,7 +207,7 @@ class _SpecialEventScreenState extends State<SpecialEventScreen> {
               title,
               style: TextStyle(
                 fontFamily: 'VarelaRound',
-                fontSize: 20.r,
+                fontSize: 18.r,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),

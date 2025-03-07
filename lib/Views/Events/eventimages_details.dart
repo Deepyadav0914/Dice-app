@@ -1,8 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'Controller/eventimages_controller.dart';
+import 'Controller/events_controller.dart';
 
 class EventImagesScreen extends StatefulWidget {
   static const String routeName = '/EventImagesScreen';
@@ -75,7 +76,7 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                       );
                     }
 
-                    final eventimage = controller.event;
+                    var eventimage = controller.event[0].eventImages;
 
                     if (eventimage.isEmpty) {
                       return Center(
@@ -90,33 +91,36 @@ class _EventImagesScreenState extends State<EventImagesScreen> {
                       physics: const AlwaysScrollableScrollPhysics(),
                       itemCount: eventimage.length,
                       itemBuilder: (context, index) {
-                        final eventItem = eventimage[index];
-
-                        return Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              20.verticalSpace,
-                              controller.eventImages.isEmpty
-                                  ? SizedBox()
-                                  : Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(19.r),
-                                        border: Border.all(
-                                            width: 4.r, color: Colors.grey),
-                                      ),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(15.r),
-                                        child: Image.network(
-                                          controller.eventImages,
-                                          height: 320.r,
-                                          fit: BoxFit.fill,
+                        return Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15.r, vertical: 8.r),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                eventimage[index].isEmpty
+                                    ? SizedBox()
+                                    : Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(19.r),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(15.r),
+                                          child: CachedNetworkImage(
+                                            imageUrl: eventimage[index],
+                                            fit: BoxFit.fill,
+                                            progressIndicatorBuilder:
+                                                (context, url, progress) =>
+                                                    CircularProgressIndicator(
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                            ]);
+                              ]),
+                        );
                       },
                     );
                   }),

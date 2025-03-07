@@ -24,11 +24,7 @@ class _TokensScreenState extends State<TokensScreen> {
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Color(0xFF0F2027),
-                Color(0xFF203A43),
-                Color(0xFF2C5364)
-              ],
+              colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -47,7 +43,6 @@ class _TokensScreenState extends State<TokensScreen> {
                       Icons.arrow_back_ios,
                       color: Colors.white,
                       size: 28.r,
-
                     ),
                   ),
                   Spacer(),
@@ -90,9 +85,8 @@ class _TokensScreenState extends State<TokensScreen> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20.r),
-                              border: Border.all(
-                                  width: 4.r, color: Colors.grey),
-
+                              border:
+                                  Border.all(width: 4.r, color: Colors.grey),
                             ),
                             child: Padding(
                               padding: EdgeInsets.all(8.r),

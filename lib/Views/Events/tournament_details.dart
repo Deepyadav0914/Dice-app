@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'Controller/tournament_controller.dart';
+import 'Controller/events_controller.dart';
 
 class TournamentScreen extends StatefulWidget {
   const TournamentScreen({super.key});
@@ -167,7 +167,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
               title,
               style: TextStyle(
                 fontFamily: 'VarelaRound',
-                fontSize: 20.r,
+                fontSize: 18.r,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
@@ -198,7 +198,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
               title,
               style: TextStyle(
                 fontFamily: 'VarelaRound',
-                fontSize: 20.r,
+                fontSize: 18.r,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
@@ -207,7 +207,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
               subtitle,
               style: TextStyle(
                 fontFamily: 'VarelaRound',
-                fontSize: 20.r,
+                fontSize: 18.r,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../Generated/assets.dart';
 import '../../main.dart';
-import 'Controller/ddreward_details_controller.dart';
+import 'Controller/ddreward_controller.dart';
 
 class DDRewardDetailScreen extends StatefulWidget {
   const DDRewardDetailScreen({super.key});
@@ -232,12 +232,12 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                                 snackPosition:
                                                     SnackPosition.TOP,
                                                 icon: Icon(Icons.done_outline,
-                                                    color: Colors.white),
+                                                    color: Colors.black87),
                                                 duration:
                                                     const Duration(seconds: 3),
                                                 backgroundColor:
                                                     Colors.grey[500],
-                                                colorText: Colors.white,
+                                                colorText: Colors.black87,
                                               );
                                             },
                                             style: TextButton.styleFrom(

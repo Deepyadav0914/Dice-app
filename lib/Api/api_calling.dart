@@ -76,6 +76,7 @@ class ApiCall {
           'https://miracocopepsi.com/admin/mayur/coc/pradip/ios/monopoly_deep/event.json');
 
       if (response.statusCode == 200) {
+        print(response.data);
         return eventsModelFromJson(json.encode(response.data));
       } else {
         throw Exception('Failed to load data');

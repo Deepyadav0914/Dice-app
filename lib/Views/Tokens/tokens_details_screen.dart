@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'Controller/tokens_details_controller.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'Controller/tokens_controller.dart';
 
 class TokensDetailScreen extends StatefulWidget {
   const TokensDetailScreen({super.key});
@@ -47,7 +49,6 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                           Icons.arrow_back_ios,
                           color: Colors.white,
                           size: 28.r,
-
                         ),
                       ),
                       Spacer(),
@@ -58,8 +59,6 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                           fontWeight: FontWeight.bold,
                           fontSize: 26.r,
                           fontFamily: 'VarelaRound',
-
-
                         ),
                       ),
                       Spacer(),
@@ -68,21 +67,13 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                   20.verticalSpace,
                   controller.image.isEmpty
                       ? SizedBox()
-                      : Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(19.r),
-                            border:
-                                Border.all(width: 4.r, color: Colors.grey),
-
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15.r),
-                            child: Image.network(
-                              controller.image,
-                              height: 300.r,
-                              fit: BoxFit.fill,
-                            ),
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(15.r),
+                          child: CachedNetworkImage(
+                            imageUrl: controller.image,
+                            placeholder: (context, url) =>
+                                LoadingAnimationWidget.bouncingBall(
+                                    color: Colors.white, size: 40.r),
                           ),
                         ),
                   30.verticalSpace,
@@ -90,11 +81,10 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                     controller.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 26.r,
+                      fontSize: 24.r,
                       fontFamily: 'VarelaRound',
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-
                     ),
                   ),
                   20.verticalSpace,
@@ -105,8 +95,6 @@ class _TokensDetailScreenState extends State<TokensDetailScreen> {
                       fontSize: 18.r,
                       fontFamily: 'VarelaRound',
                       color: Colors.white70,
-
-
                     ),
                   ),
                 ],

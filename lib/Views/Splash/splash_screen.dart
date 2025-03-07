@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               LoadingAnimationWidget.threeArchedCircle(
                 color: Colors.white,
-                size: 40.r,
+                size: 30.r,
               ),
             ],
           )),

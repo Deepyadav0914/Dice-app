@@ -25,7 +25,11 @@ class _EventsScreenState extends State<EventsScreen> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
+                colors: [
+                  Color(0xFF0F2027),
+                  Color(0xFF203A43),
+                  Color(0xFF2C5364)
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -101,7 +105,6 @@ class _EventsScreenState extends State<EventsScreen> {
                                   fontFamily: 'VarelaRound',
                                   fontSize: 22.r,
                                   fontWeight: FontWeight.bold,
-
                                 ),
                               ),
                             ),

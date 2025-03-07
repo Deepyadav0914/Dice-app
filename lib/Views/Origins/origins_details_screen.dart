@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'Controller/origins_details_controller.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'Controller/origins_screen_controller.dart';
 
 class OriginsDetailScreen extends StatefulWidget {
   const OriginsDetailScreen({super.key});
@@ -62,20 +64,14 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                       Spacer(),
                     ],
                   ),
-                  20.verticalSpace,
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(19.r),
-                      border: Border.all(width: 4.r, color: Colors.grey),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.r),
-                      child: Image.network(
-                        controller.sticker,
-                        height: 300.r,
-                        fit: BoxFit.fill,
-                      ),
+                  40.verticalSpace,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15.r),
+                    child: CachedNetworkImage(
+                      imageUrl: controller.sticker,
+                      placeholder: (context, url) =>
+                          LoadingAnimationWidget.bouncingBall(
+                              color: Colors.white, size: 40.r),
                     ),
                   ),
                   30.verticalSpace,
@@ -83,7 +79,7 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     controller.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 26.r,
+                      fontSize: 24.r,
                       fontFamily: 'VarelaRound',
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -97,7 +93,6 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                       fontSize: 18.r,
                       fontFamily: 'VarelaRound',
                       color: Colors.white70,
-
                     ),
                   ),
                 ],

@@ -10,14 +10,13 @@ import '../Rewards/ddreward_screen.dart';
 import '../Shield/shield_screen.dart';
 import '../Stickers/stickers_screen.dart';
 import '../Tokens/tokens_screen.dart';
-import 'Controller/menu_controller.dart';
 
 class MenuScreen extends StatelessWidget {
   static const String routeName = '/MenuScreen';
 
   MenuScreen({super.key});
 
-  final controller = Get.put(MainMenuController());
+
 
   @override
   Widget build(BuildContext context) {

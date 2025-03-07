@@ -7,7 +7,6 @@ class FaqsController extends GetxController {
   RxBool isLoading = true.obs;
   String VarelaRound = 'VarelaRound';
 
-
   @override
   void onInit() {
     fetchFaqsData();
