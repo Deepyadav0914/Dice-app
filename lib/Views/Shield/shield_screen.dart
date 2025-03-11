@@ -63,7 +63,7 @@ class _ShieldScreenState extends State<ShieldScreen> {
                   return Center(
                     child: LoadingAnimationWidget.hexagonDots(
                       color: Colors.white,
-                      size: 40.sp,
+                      size: 40.r,
                     ),
                   );
                 }
@@ -83,7 +83,8 @@ class _ShieldScreenState extends State<ShieldScreen> {
                           Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(Assets.imagesList), fit: BoxFit.fill),
+                                  image: AssetImage(Assets.imagesList),
+                                  fit: BoxFit.fill),
                               borderRadius: BorderRadius.circular(20.r),
                               border:
                                   Border.all(width: 4.r, color: Colors.grey),

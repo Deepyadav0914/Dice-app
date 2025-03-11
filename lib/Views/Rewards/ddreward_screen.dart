@@ -9,7 +9,6 @@ import 'ddreward_details_screen.dart';
 
 class DDrewardScreen extends StatefulWidget {
   static const String routeName = '/DDrewardScreen';
-
   const DDrewardScreen({super.key});
 
   @override
@@ -63,8 +62,8 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                     if (controller.isLoading.value) {
                       return Center(
                         child: LoadingAnimationWidget.hexagonDots(
-                          color: Colors.blueGrey,
-                          size: 50.sp,
+                          color: Colors.white,
+                          size: 40.r,
                         ),
                       );
                     } else if (controller.rewardData.value == null ||
@@ -79,7 +78,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                     }
 
                     final groupedData = <String, List>{};
-                    for (var item in controller.rewardData.value!.diceCode) {
+                    for (var item in controller.rewardData.value.diceCode) {
                       final date = controller.formatDate(int.parse(item.date));
                       groupedData.putIfAbsent(date, () => []).add(item);
                     }
@@ -144,27 +143,22 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  trailing: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(25),
-                                      ),
-                                      backgroundColor: Colors.grey[300],
-                                      textStyle: TextStyle(
+                                  trailing: Container(
+                                    width: 100.r,
+                                    height: 35.r,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.shade700,
+                                      borderRadius: BorderRadius.circular(25),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      isClaimed ? 'Claimed' : 'Claim',
+                                      style: TextStyle(
+                                        color: Colors.white,
                                         fontSize: 18.r,
                                         fontFamily: 'VarelaRound',
                                         fontWeight: FontWeight.bold,
                                       ),
-                                    ),
-                                    onPressed: isClaimed
-                                        ? null
-                                        : () {
-                                            controller.rewardData;
-                                          },
-                                    child: Text(
-                                      isClaimed ? 'Claimed' : 'Claim',
-                                      style: const TextStyle(
-                                          color: Colors.black87),
                                     ),
                                   ),
                                   onTap: () {

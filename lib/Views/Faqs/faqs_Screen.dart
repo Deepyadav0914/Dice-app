@@ -65,7 +65,7 @@ class _FaqsScreenState extends State<FaqsScreen> {
                       return Center(
                         child: LoadingAnimationWidget.hexagonDots(
                           color: Colors.white,
-                          size: 40.sp,
+                          size: 40.r,
                         ),
                       );
                     }

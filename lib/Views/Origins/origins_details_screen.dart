@@ -30,11 +30,12 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
             ),
           ),
           SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 15.r, horizontal: 15.r),
-              child: Column(
-                children: [
-                  Row(
+            child: Column(
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 15.r, horizontal: 15.r),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       IconButton(
@@ -58,44 +59,86 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                       Spacer(),
                     ],
                   ),
-                  40.verticalSpace,
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.r),
-                        border: Border.all(width: 3.r, color: Colors.white)),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.r),
-                      child: CachedNetworkImage(
-                        imageUrl: controller.sticker,
-                        placeholder: (context, url) =>
-                            LoadingAnimationWidget.bouncingBall(
-                                color: Colors.white, size: 40.r),
+                ),
+                Expanded(
+                  child: Obx(() {
+                    if (controller.isLoading.value) {
+                      return Center(
+                        child: LoadingAnimationWidget.hexagonDots(
+                          color: Colors.white,
+                          size: 40.r,
+                        ),
+                      );
+                    }
+                    final data = controller.item[0].stickers;
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.r),
+                      child: GridView.builder(
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2, // Adjust as needed
+                          crossAxisSpacing: 10.r,
+                          mainAxisSpacing: 10.r,
+                          childAspectRatio: 1.0,
+                        ),
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(Assets.imagesList),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.circular(20.r),
+                              border:
+                                  Border.all(width: 4.r, color: Colors.grey),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(8.r),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CachedNetworkImage(
+                                    imageUrl: data[index].image,
+                                    height: 100.r,
+                                    placeholder: (context, url) =>
+                                        LoadingAnimationWidget
+                                            .threeArchedCircle(
+                                      color: Colors.grey,
+                                      size: 20.r,
+                                    ),
+                                  ),
+                                 5.verticalSpace,
+                                  Container(
+                                    height: 30.r,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(22.r),
+                                        color: Colors.grey[500]),
+                                    child: Center(
+                                      child: Text(
+                                        data[index].name,
+                                        style: TextStyle(
+                                          fontFamily: 'VarelaRound',
+                                          fontSize: 15.r,
+                                          overflow: TextOverflow.ellipsis,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
                       ),
-                    ),
-                  ),
-                  30.verticalSpace,
-                  Text(
-                    controller.name,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 24.r,
-                      fontFamily: 'VarelaRound',
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  20.verticalSpace,
-                  Text(
-                    controller.category,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18.r,
-                      fontFamily: 'VarelaRound',
-                      color: Colors.white70,
-                    ),
-                  ),
-                ],
-              ),
+                    );
+                  }),
+                )
+              ],
             ),
           ),
         ],

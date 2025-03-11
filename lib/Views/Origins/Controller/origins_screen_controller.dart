@@ -30,22 +30,24 @@ class OriginsController extends GetxController {
 class OriginsDetailController extends GetxController {
   RxList<Origin> item = <Origin>[].obs;
   RxInt index = 0.obs;
+  RxBool isLoading = true.obs;
   String VarelaRound = 'VarelaRound';
 
   @override
   void onInit() {
-    var originsData = Get.arguments['item'];
-    if (originsData is Origin) {
-      item.value = [originsData];
-      print(item[0].category);
-    }
-    print(originsData);
-    index.value = Get.arguments['index'];
-    print(index.value);
     super.onInit();
+    final arguments = Get.arguments;
+    if (arguments is Map<String, dynamic>) {
+      if (arguments.containsKey('item') && arguments['item'] is Origin) {
+        item.value = [arguments['item']];
+      }
+      if (arguments.containsKey('index')) {
+        index.value = arguments['index'];
+      }
+    }
+    isLoading.value = false;
   }
 
-  String get sticker => item[0].stickers[0].image;
+  String get image => item[0].stickers[0].image;
   String get name => item[0].stickers[0].name;
-  String get category => item[0].category;
 }

@@ -65,7 +65,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
                       return Center(
                         child: LoadingAnimationWidget.hexagonDots(
                           color: Colors.white,
-                          size: 40.sp,
+                          size: 40.r,
                         ),
                       );
                     }
@@ -112,26 +112,30 @@ class _TournamentScreenState extends State<TournamentScreen> {
                                   .description, // Or any other property from Tournament
                               onTap: () {},
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 10.r, horizontal: 15.r),
-                              child: Text(
-                                'Tournament Data',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'VarelaRound',
-                                  fontSize: 24.r,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                            eventItem.tournaments[0].tData[0].name.isEmpty
+                                ? SizedBox()
+                                : Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 10.r, horizontal: 15.r),
+                                    child: Text(
+                                      'Tournament Data',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'VarelaRound',
+                                        fontSize: 24.r,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                             for (var tournament
                                 in eventItem.tournaments[0].tData)
-                              _buildTDataCard(
-                                title: 'Name : ${tournament.name}  ',
-                                subtitle: 'Time : ${tournament.time} ',
-                                onTap: () {},
-                              ),
+                              eventItem.tournaments[0].tData[0].name.isEmpty
+                                  ? SizedBox()
+                                  : _buildTDataCard(
+                                      title: 'Name : ${tournament.name}  ',
+                                      subtitle: 'Time : ${tournament.time} ',
+                                      onTap: () {},
+                                    ),
                           ],
                         );
                       },

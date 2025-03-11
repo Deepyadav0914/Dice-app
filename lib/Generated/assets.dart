@@ -4,12 +4,17 @@ class Assets {
 
   static const String fontsVarelaRoundRegular = 'assets/fonts/VarelaRound-Regular.ttf';
   static const String imagesBg = 'assets/images/bg.png';
-  static const String imagesCardbg = 'assets/images/cardbg.png';
-  static const String imagesDice = 'assets/images/dice.png';
+  static const String imagesDownload = 'assets/images/download.png';
+  static const String imagesEvents = 'assets/images/events.png';
+  static const String imagesFaq = 'assets/images/faq.png';
   static const String imagesList = 'assets/images/list.png';
   static const String imagesLogo = 'assets/images/logo.png';
-  static const String imagesReward = 'assets/images/reward.png';
+  static const String imagesOrigins = 'assets/images/origins.png';
+  static const String imagesRewards = 'assets/images/rewards.png';
+  static const String imagesSetting = 'assets/images/setting.png';
   static const String imagesShield = 'assets/images/shield.png';
   static const String imagesSplash = 'assets/images/splash.png';
+  static const String imagesStickers = 'assets/images/stickers.png';
+  static const String imagesTokens = 'assets/images/tokens.png';
 
 }

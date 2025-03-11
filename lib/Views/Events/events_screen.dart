@@ -109,6 +109,7 @@ class _EventsScreenState extends State<EventsScreen> {
                               onTap: () => Get.to(() => TournamentScreen(),
                                   arguments: {'event': event, 'index': index}),
                             ),
+                            event.eventImages[0].isEmpty?SizedBox():
                             _buildEventCard(
                               title: 'Event Images',
                               onTap: () => Get.to(() => EventImagesScreen(),

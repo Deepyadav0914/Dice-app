@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dice_app/Views/Stickers/stickers_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -22,6 +23,8 @@ class _StickersScreenState extends State<StickersScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final unlockGifs = box.read<Map<String, dynamic>>('unlockGifs') ?? {};
+    //print("unlockGifs == ${unlockGifs.length}");
     return GetBuilder<StickersController>(
       builder: (controller) {
         return Scaffold(
@@ -72,7 +75,7 @@ class _StickersScreenState extends State<StickersScreen> {
                           return Center(
                             child: LoadingAnimationWidget.hexagonDots(
                               color: Colors.white,
-                              size: 50.r,
+                              size: 40.r,
                             ),
                           );
                         } else if (snapshot.hasError) {
@@ -99,7 +102,7 @@ class _StickersScreenState extends State<StickersScreen> {
                           );
                         } else if (snapshot.hasData) {
                           final allstickers = snapshot.data!.stickers;
-                          print(allstickers.length);
+                          //print(allstickers.length);
                           box.write('totalstickers', allstickers.length);
 
                           return SafeArea(
@@ -112,16 +115,24 @@ class _StickersScreenState extends State<StickersScreen> {
                                 itemCount: allstickers.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   String uniqueKey = "$index";
-                                  print("uniqueKey == $uniqueKey");
+                                  // print("uniqueKey == $uniqueKey");
 
                                   return Padding(
                                     padding: EdgeInsets.symmetric(
                                         vertical: 6.r, horizontal: 10.r),
                                     child: GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.to(() => StickerDetailsScreen(),
+                                            arguments: {
+                                              'Stickers': allstickers[index]
+                                            });
+                                      },
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          image: DecorationImage(
+                                              image:
+                                                  AssetImage(Assets.imagesList),
+                                              fit: BoxFit.fill),
                                           borderRadius:
                                               BorderRadius.circular(20.r),
                                           border: Border.all(
@@ -129,9 +140,10 @@ class _StickersScreenState extends State<StickersScreen> {
                                         ),
                                         child: CachedNetworkImage(
                                           placeholder: (context, url) =>
-                                              LoadingAnimationWidget.threeArchedCircle(
+                                              LoadingAnimationWidget
+                                                  .threeArchedCircle(
                                             color: Colors.black45,
-                                            size: 40.r,
+                                            size: 25.r,
                                           ),
                                           imageUrl:
                                               allstickers[index].toString(),

@@ -1,8 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-
 import '../../Generated/assets.dart';
 import 'Controller/origins_screen_controller.dart';
 import 'origins_details_screen.dart';
@@ -64,7 +64,7 @@ class _OriginsScreenState extends State<OriginsScreen> {
                   return Center(
                     child: LoadingAnimationWidget.hexagonDots(
                       color: Colors.white,
-                      size: 40.sp,
+                      size: 40.r,
                     ),
                   );
                 }
@@ -83,7 +83,8 @@ class _OriginsScreenState extends State<OriginsScreen> {
                           Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(Assets.imagesList), fit: BoxFit.fill),
+                                  image: AssetImage(Assets.imagesList),
+                                  fit: BoxFit.fill),
                               borderRadius: BorderRadius.circular(20.r),
                               border:
                                   Border.all(width: 4.r, color: Colors.grey),
@@ -102,11 +103,26 @@ class _OriginsScreenState extends State<OriginsScreen> {
                                     },
                                   );
                                 },
+                                //
+                                leading: item.icon.isEmpty
+                                    ? SizedBox()
+                                    : CachedNetworkImage(
+                                        imageUrl:
+                                            item.icon + item.category + ".png",
+                                        height: 45.r,
+                                        placeholder: (context, url) =>
+                                            LoadingAnimationWidget
+                                                .threeArchedCircle(
+                                          color: Colors.grey,
+                                          size: 20.r,
+                                        ),
+                                      ),
                                 title: Text(
                                   item.category.toString(),
                                   style: TextStyle(
                                     fontFamily: 'VarelaRound',
-                                    fontSize: 20.r,
+                                    fontSize: 19.r,
+                                    overflow: TextOverflow.ellipsis,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                   ),

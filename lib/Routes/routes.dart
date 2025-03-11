@@ -12,6 +12,7 @@ import '../Views/Rewards/ddreward_screen.dart';
 import '../Views/Shield/shield_details_screen.dart';
 import '../Views/Shield/shield_screen.dart';
 import '../Views/Splash/splash_screen.dart';
+import '../Views/Stickers/stickers_details_screen.dart';
 import '../Views/Stickers/stickers_screen.dart';
 import '../Views/Tokens/tokens_details_screen.dart';
 import '../Views/Tokens/tokens_screen.dart';
@@ -47,6 +48,12 @@ class Router {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => StickersScreen(),
+        );
+
+      case StickerDetailsScreen.routeName:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => StickerDetailsScreen(),
         );
 
       case OriginsScreen.routeName:
