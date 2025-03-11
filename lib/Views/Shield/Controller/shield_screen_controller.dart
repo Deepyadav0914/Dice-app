@@ -19,7 +19,7 @@ class ShieldController extends GetxController {
       final shielddata = await ApiCall().shieldData();
 
       ShieldData.value = shielddata;
-      print(shielddata.shieldData);
+      // print(shielddata.shieldData);
     } catch (e) {
       Get.snackbar("Error", "Failed to load data. Please try again.");
     } finally {
@@ -39,11 +39,11 @@ class ShieldsController extends GetxController {
     var ShieldDatumsData = Get.arguments['item'];
     if (ShieldDatumsData is ShieldDatum) {
       item.value = [ShieldDatumsData];
-      print(item[0].name);
+      // print(item[0].name);
     }
-    print(ShieldDatumsData);
+    // print(ShieldDatumsData);
     index.value = Get.arguments['index'];
-    print(index.value);
+    // print(index.value);
     super.onInit();
   }
 

@@ -38,11 +38,11 @@ class TokensDetailController extends GetxController {
     var TokensDatumsData = Get.arguments['item'];
     if (TokensDatumsData is TokensDatum) {
       item.value = [TokensDatumsData];
-      print(item[0].name);
+      // print(item[0].name);
     }
-    print(TokensDatumsData);
+    // print(TokensDatumsData);
     index.value = Get.arguments['index'];
-    print(index.value);
+    // print(index.value);
     super.onInit();
   }
 

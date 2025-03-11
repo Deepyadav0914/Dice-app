@@ -109,12 +109,17 @@ class _EventsScreenState extends State<EventsScreen> {
                               onTap: () => Get.to(() => TournamentScreen(),
                                   arguments: {'event': event, 'index': index}),
                             ),
-                            event.eventImages[0].isEmpty?SizedBox():
-                            _buildEventCard(
-                              title: 'Event Images',
-                              onTap: () => Get.to(() => EventImagesScreen(),
-                                  arguments: {'event': event, 'index': index}),
-                            ),
+                            event.eventImages[0].isEmpty
+                                ? SizedBox()
+                                : _buildEventCard(
+                                    title: 'Event Images',
+                                    onTap: () => Get.to(
+                                        () => EventImagesScreen(),
+                                        arguments: {
+                                          'event': event,
+                                          'index': index
+                                        }),
+                                  ),
                             _buildEventCard(
                               title: 'Special Events',
                               onTap: () => Get.to(() => SpecialEventScreen(),
@@ -157,8 +162,8 @@ class _EventsScreenState extends State<EventsScreen> {
                 color: Colors.black,
               ),
             ),
-            trailing: Icon(Icons.arrow_forward_ios,
-                color: Colors.white, size: 25.r),
+            trailing:
+                Icon(Icons.arrow_forward_ios, color: Colors.white, size: 25.r),
           ),
         ),
       ),

@@ -48,13 +48,13 @@ class DDRewardDetailController extends GetxController {
     var rewardData = Get.arguments['data'];
     if (rewardData is DiceCode) {
       reward.value = [rewardData];
-      print(reward[0].name);
+      // print(reward[0].name);
     }
-    print(rewardData);
+    // print(rewardData);
     date.value = Get.arguments['date'];
-    print(date.value);
+    // print(date.value);
     index.value = Get.arguments['index'];
-    print(index.value);
+    // print(index.value);
     super.onInit();
   }
 

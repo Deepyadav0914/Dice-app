@@ -107,7 +107,7 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                                       size: 20.r,
                                     ),
                                   ),
-                                 5.verticalSpace,
+                                  5.verticalSpace,
                                   Container(
                                     height: 30.r,
                                     width: double.infinity,

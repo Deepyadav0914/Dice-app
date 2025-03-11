@@ -21,7 +21,7 @@ class EventsController extends GetxController {
       if (fetchedData.eventData.isNotEmpty) {
         eventsData.value = fetchedData;
 
-        print(eventsData.value);
+        // print(eventsData.value);
       } else {
         Get.snackbar("No Events", "No event data available.");
       }
@@ -45,11 +45,11 @@ class TournamentController extends GetxController {
     var tournamentsData = Get.arguments['event'];
     if (tournamentsData is EventDatum) {
       event.value = [tournamentsData];
-      print(event[0].tournaments[0].description);
+      // print(event[0].tournaments[0].description);
     }
-    print(tournamentsData);
+    // print(tournamentsData);
     index.value = Get.arguments['index'];
-    print(index.value);
+    // print(index.value);
     super.onInit();
   }
 
@@ -69,11 +69,11 @@ class EventImageController extends GetxController {
     var imagesData = Get.arguments['event'];
     if (imagesData is EventDatum) {
       event.value = [imagesData];
-      print(event[0].eventImages);
+      // print(event[0].eventImages);
     }
-    print(imagesData);
+    // print(imagesData);
     index.value = Get.arguments['index'];
-    print(index.value);
+    // print(index.value);
     super.onInit();
   }
 
@@ -91,11 +91,11 @@ class SpecialEventController extends GetxController {
     var SpecialEventsData = Get.arguments['event'];
     if (SpecialEventsData is EventDatum) {
       event.value = [SpecialEventsData];
-      print(event[0].specialEvents[0].description);
+      // print(event[0].specialEvents[0].description);
     }
-    print(SpecialEventsData);
+    // print(SpecialEventsData);
     index.value = Get.arguments['index'] ?? 0;
-    print(index.value);
+    // print(index.value);
 
     super.onInit();
   }
