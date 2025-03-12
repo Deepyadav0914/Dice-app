@@ -52,6 +52,10 @@ dependencies:
   flutter_flip_card:
   flip_card:
   glassmorphism:
+  share_plus:
+  in_app_review:
+  url_launcher:
+  in_app_review_platform_interface:
 
 
 

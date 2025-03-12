@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../Generated/assets.dart';
 import '../../main.dart';
 import 'Controller/ddreward_controller.dart';
@@ -256,7 +257,13 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                               },
                       ),
                       15.horizontalSpace,
-                      _buildActionButton('Share', () {}),
+                      Builder(
+                        builder: (BuildContext context) {
+                          return _buildActionButton('Share', () {
+                            controller._onShareWithResult(context);
+                          });
+                        },
+                      ),
                     ],
                   ),
                 ],
@@ -294,4 +301,48 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
       ),
     );
   }
+}
+
+extension on DDRewardDetailController {
+  Future<void> _onShareWithResult(BuildContext context) async {
+    final box = context.findRenderObject() as RenderBox?;
+
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    ShareResult shareResult;
+    if (reward[0].url.isNotEmpty) {
+      shareResult = await Share.shareUri(
+        Uri.parse(reward[0].url),
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+      );
+    } else {
+      shareResult = await Share.share(
+        reward[0].url,
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+      );
+    }
+    scaffoldMessenger.showSnackBar(getResultSnackBar(shareResult));
+  }
+}
+
+SnackBar getResultSnackBar(ShareResult result) {
+  return SnackBar(
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Share result: ${result.status}",
+          style: TextStyle(
+            fontSize: 14.r,
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+        if (result.status == ShareResultStatus.success)
+          Text("Shared to: ${result.raw}")
+      ],
+    ),
+    padding: EdgeInsets.all(15),
+    duration: Duration(seconds: 3),
+  );
 }

@@ -6,6 +6,7 @@ import '../Events/events_screen.dart';
 import '../Faqs/faqs_Screen.dart';
 import '../Origins/origins_screen.dart';
 import '../Rewards/ddreward_screen.dart';
+import '../Settings/settings_screen.dart';
 import '../Shield/shield_screen.dart';
 import '../Stickers/stickers_screen.dart';
 import '../Tokens/tokens_screen.dart';
@@ -42,11 +43,6 @@ class MenuScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontSize: 28.r,
                           ),
-                        ),
-                        Icon(
-                          Icons.account_circle,
-                          size: 45,
-                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -89,7 +85,9 @@ class MenuScreen extends StatelessWidget {
                                     Get.toNamed(TokensScreen.routeName);
                                   } else if (index == 6) {
                                     Get.toNamed(FaqsScreen.routeName);
-                                  } else if (index == 7) {}
+                                  } else if (index == 7) {
+                                    Get.toNamed(SettingScreen.routeName);
+                                  }
                                 },
                                 leading: Image(
                                   image: AssetImage(menulist.image),

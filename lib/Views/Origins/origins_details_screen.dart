@@ -72,64 +72,26 @@ class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
                     }
                     final data = controller.item[0].stickers;
                     return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.r),
+                      padding: const EdgeInsets.all(8.0),
                       child: GridView.builder(
                         physics: const AlwaysScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, // Adjust as needed
-                          crossAxisSpacing: 10.r,
-                          mainAxisSpacing: 10.r,
-                          childAspectRatio: 1.0,
+                          crossAxisCount: 3, // Adjust as needed
+                          crossAxisSpacing: 8.r,
+                          mainAxisSpacing: 8.r,
+                          childAspectRatio: 0.6,
                         ),
                         itemCount: data.length,
                         itemBuilder: (context, index) {
-                          return Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(Assets.imagesList),
-                                  fit: BoxFit.fill),
-                              borderRadius: BorderRadius.circular(20.r),
-                              border:
-                                  Border.all(width: 4.r, color: Colors.grey),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(8.r),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  CachedNetworkImage(
-                                    imageUrl: data[index].image,
-                                    height: 100.r,
-                                    placeholder: (context, url) =>
-                                        LoadingAnimationWidget
-                                            .threeArchedCircle(
-                                      color: Colors.grey,
-                                      size: 20.r,
-                                    ),
-                                  ),
-                                  5.verticalSpace,
-                                  Container(
-                                    height: 30.r,
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(22.r),
-                                        color: Colors.grey[500]),
-                                    child: Center(
-                                      child: Text(
-                                        data[index].name,
-                                        style: TextStyle(
-                                          fontFamily: 'VarelaRound',
-                                          fontSize: 15.r,
-                                          overflow: TextOverflow.ellipsis,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                          return Center(
+                            child: CachedNetworkImage(
+                              imageUrl: data[index].image,
+                              fit: BoxFit.fill,
+                              height: 150.r,
+                              placeholder: (context, url) =>
+                                  LoadingAnimationWidget.threeArchedCircle(
+                                color: Colors.grey,
+                                size: 20.r,
                               ),
                             ),
                           );

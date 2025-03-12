@@ -9,6 +9,7 @@ import '../Views/Origins/origins_details_screen.dart';
 import '../Views/Origins/origins_screen.dart';
 import '../Views/Rewards/ddreward_details_screen.dart';
 import '../Views/Rewards/ddreward_screen.dart';
+import '../Views/Settings/settings_screen.dart';
 import '../Views/Shield/shield_details_screen.dart';
 import '../Views/Shield/shield_screen.dart';
 import '../Views/Splash/splash_screen.dart';
@@ -120,6 +121,12 @@ class Router {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => FaqsScreen(),
+        );
+
+      case SettingScreen.routeName:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => SettingScreen(),
         );
 
       default:
