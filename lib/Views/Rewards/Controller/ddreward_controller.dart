@@ -12,14 +12,15 @@ class DDrewardController extends GetxController {
   var rewardData = DiceModel(diceCode: []).obs;
   RxBool isLoading = true.obs;
   RxInt index = 0.obs;
-  String fontFamily = 'VarelaRound';
+  String VarelaRound = 'VarelaRound';
   RxMap<String, bool> claimedRewards = <String, bool>{}.obs;
 
   @override
   void onInit() {
     fetchRewardData();
     loadClaimedRewards();
-    super.onInit();
+
+     super.onInit();
   }
 
   Future<void> fetchRewardData() async {
