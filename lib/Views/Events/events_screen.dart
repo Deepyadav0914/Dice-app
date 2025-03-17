@@ -1,5 +1,6 @@
 import 'package:dice_app/Views/Events/specialevent_details.dart';
 import 'package:dice_app/Views/Events/tournament_details.dart';
+import 'package:dice_app/res/common_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -8,16 +9,11 @@ import '../../Generated/assets.dart';
 import 'Controller/events_controller.dart';
 import 'eventimages_details.dart';
 
-class EventsScreen extends StatefulWidget {
+class EventsScreen extends StatelessWidget {
   static const String routeName = '/EventsScreen';
 
-  const EventsScreen({super.key});
+  EventsScreen({super.key});
 
-  @override
-  State<EventsScreen> createState() => _EventsScreenState();
-}
-
-class _EventsScreenState extends State<EventsScreen> {
   final controller = Get.put(EventsController());
 
   @override
@@ -104,14 +100,14 @@ class _EventsScreenState extends State<EventsScreen> {
                                 ),
                               ),
                             ),
-                            _buildEventCard(
+                            Cards().buildEventCard(
                               title: 'Tournaments',
                               onTap: () => Get.to(() => TournamentScreen(),
                                   arguments: {'event': event, 'index': index}),
                             ),
                             event.eventImages[0].isEmpty
                                 ? SizedBox()
-                                : _buildEventCard(
+                                : Cards().buildEventCard(
                                     title: 'Event Images',
                                     onTap: () => Get.to(
                                         () => EventImagesScreen(),
@@ -120,7 +116,7 @@ class _EventsScreenState extends State<EventsScreen> {
                                           'index': index
                                         }),
                                   ),
-                            _buildEventCard(
+                            Cards().buildEventCard(
                               title: 'Special Events',
                               onTap: () => Get.to(() => SpecialEventScreen(),
                                   arguments: {'event': event, 'index': index}),
@@ -135,37 +131,6 @@ class _EventsScreenState extends State<EventsScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildEventCard({required String title, required VoidCallback onTap}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 15.r),
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(Assets.imagesList), fit: BoxFit.fill),
-          borderRadius: BorderRadius.circular(22.r),
-          border: Border.all(width: 4.r, color: Colors.grey),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(10.r),
-          child: ListTile(
-            onTap: onTap,
-            title: Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'VarelaRound',
-                fontSize: 20.r,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            trailing:
-                Icon(Icons.arrow_forward_ios, color: Colors.white, size: 25.r),
-          ),
-        ),
       ),
     );
   }

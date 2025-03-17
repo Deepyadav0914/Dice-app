@@ -93,6 +93,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                       itemBuilder: (context, index) {
                         final date = groupedData.keys.elementAt(index);
                         final data = groupedData[date]!;
+                        //  print(data);
 
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -112,6 +113,7 @@ class _DDrewardScreenState extends State<DDrewardScreen> {
                             ),
                             ...data.asMap().entries.map((entry) {
                               final reward = entry.value;
+
                               final rewardKey =
                                   "${reward.name}_${date}_${entry.key}";
                               final isClaimed =

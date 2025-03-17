@@ -18,7 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Navigate to MenuScreen after 4 seconds using GetX
     Future.delayed(const Duration(seconds: 4), () {
       Get.off(() => MenuScreen());
     });

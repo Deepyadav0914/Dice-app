@@ -6,16 +6,10 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import 'Controller/origins_screen_controller.dart';
 
-class OriginsDetailScreen extends StatefulWidget {
+class OriginsDetailScreen extends StatelessWidget {
   static const String routeName = '/OriginsDetailScreen';
 
-  const OriginsDetailScreen({super.key});
-
-  @override
-  State<OriginsDetailScreen> createState() => _OriginsDetailScreenState();
-}
-
-class _OriginsDetailScreenState extends State<OriginsDetailScreen> {
+  OriginsDetailScreen({super.key});
   final controller = Get.put(OriginsDetailController());
 
   @override

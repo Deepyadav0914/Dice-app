@@ -6,15 +6,11 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import 'Controller/events_controller.dart';
 
-class EventImagesScreen extends StatefulWidget {
+class EventImagesScreen extends StatelessWidget {
   static const String routeName = '/EventImagesScreen';
-  const EventImagesScreen({super.key});
 
-  @override
-  State<EventImagesScreen> createState() => _EventImagesScreenState();
-}
+  EventImagesScreen({super.key});
 
-class _EventImagesScreenState extends State<EventImagesScreen> {
   final controller = Get.put(EventImageController());
 
   @override

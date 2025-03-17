@@ -6,16 +6,10 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import 'Controller/stickers_controller.dart';
 
-class StickerDetailsScreen extends StatefulWidget {
+class StickerDetailsScreen extends StatelessWidget {
   static const String routeName = '/StickerDetailsScreen';
 
-  const StickerDetailsScreen({super.key});
-
-  @override
-  State<StickerDetailsScreen> createState() => _StickerDetailsScreenState();
-}
-
-class _StickerDetailsScreenState extends State<StickerDetailsScreen> {
+  StickerDetailsScreen({super.key});
   final controller = Get.put(StickerDetailsController());
 
   @override

@@ -1,3 +1,4 @@
+import 'package:dice_app/res/common_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -5,16 +6,11 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import 'Controller/events_controller.dart';
 
-class TournamentScreen extends StatefulWidget {
+class TournamentScreen extends StatelessWidget {
   static const String routeName = '/TournamentScreen';
 
-  const TournamentScreen({super.key});
+  TournamentScreen({super.key});
 
-  @override
-  State<TournamentScreen> createState() => _TournamentScreenState();
-}
-
-class _TournamentScreenState extends State<TournamentScreen> {
   final controller = Get.put(TournamentController());
 
   @override
@@ -107,7 +103,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
                                 ),
                               ),
                             ),
-                            _buildEventCard(
+                            Cards().tEventCard(
                               title: eventItem.tournaments[0]
                                   .description, // Or any other property from Tournament
                               onTap: () {},
@@ -131,7 +127,7 @@ class _TournamentScreenState extends State<TournamentScreen> {
                                 in eventItem.tournaments[0].tData)
                               eventItem.tournaments[0].tData[0].name.isEmpty
                                   ? SizedBox()
-                                  : _buildTDataCard(
+                                  : Cards().tDataCard(
                                       title: 'Name : ${tournament.name}  ',
                                       subtitle: 'Time : ${tournament.time} ',
                                       onTap: () {},
@@ -146,74 +142,6 @@ class _TournamentScreenState extends State<TournamentScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildEventCard({required String title, required VoidCallback onTap}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 15.r),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(22.r),
-          border: Border.all(width: 4.r, color: Colors.grey),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(8.r),
-          child: ListTile(
-            onTap: onTap,
-            title: Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'VarelaRound',
-                fontSize: 18.r,
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTDataCard(
-      {required String title,
-      required String subtitle,
-      required VoidCallback onTap}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 15.r),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(22.r),
-          border: Border.all(width: 4.r, color: Colors.grey),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(10.r),
-          child: ListTile(
-            onTap: onTap,
-            title: Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'VarelaRound',
-                fontSize: 18.r,
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-              ),
-            ),
-            subtitle: Text(
-              subtitle,
-              style: TextStyle(
-                fontFamily: 'VarelaRound',
-                fontSize: 18.r,
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-        ),
       ),
     );
   }

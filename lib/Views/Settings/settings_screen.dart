@@ -3,7 +3,6 @@ import 'package:dice_app/Views/Settings/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:in_app_review/in_app_review.dart';
 
 class SettingScreen extends StatelessWidget {
   static const String routeName = '/SettingScreen';
@@ -11,14 +10,6 @@ class SettingScreen extends StatelessWidget {
   SettingScreen({super.key});
 
   final SettingsController controller = Get.put(SettingsController());
-
-  // rate us method
-  Future<void> requestReview() async {
-    final InAppReview inAppReview = InAppReview.instance;
-    if (await inAppReview.isAvailable()) {
-      inAppReview.requestReview();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +84,7 @@ class SettingScreen extends StatelessWidget {
                                         context, controller.url);
                                   } else if (index == 2) {
                                   } else if (index == 3) {
-                                    requestReview();
+                                    controller.requestReview();
                                   }
                                 },
                                 leading: Image(

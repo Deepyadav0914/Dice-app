@@ -6,25 +6,16 @@ import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import '../../Model/stickers_model.dart';
-import '../../main.dart';
 import 'Controller/stickers_controller.dart';
 
-class StickersScreen extends StatefulWidget {
+class StickersScreen extends StatelessWidget {
   static const String routeName = '/StickersScreen';
 
-  const StickersScreen({super.key});
-
-  @override
-  State<StickersScreen> createState() => _StickersScreenState();
-}
-
-class _StickersScreenState extends State<StickersScreen> {
+  StickersScreen({super.key});
   final controller = Get.put(StickersController());
 
   @override
   Widget build(BuildContext context) {
-    final unlockGifs = box.read<Map<String, dynamic>>('unlockGifs') ?? {};
-    //print("unlockGifs == ${unlockGifs.length}");
     return GetBuilder<StickersController>(
       builder: (controller) {
         return Scaffold(
@@ -102,8 +93,8 @@ class _StickersScreenState extends State<StickersScreen> {
                           );
                         } else if (snapshot.hasData) {
                           final allstickers = snapshot.data!.stickers;
-                          //print(allstickers.length);
-                          box.write('totalstickers', allstickers.length);
+                          // print(allstickers.length);
+                          // box.write('totalstickers', allstickers.length);
 
                           return SafeArea(
                             child: SizedBox(
@@ -114,9 +105,6 @@ class _StickersScreenState extends State<StickersScreen> {
                                         crossAxisCount: 2),
                                 itemCount: allstickers.length,
                                 itemBuilder: (BuildContext context, int index) {
-                                  String uniqueKey = "$index";
-                                  // print("uniqueKey == $uniqueKey");
-
                                   return Padding(
                                     padding: EdgeInsets.symmetric(
                                         vertical: 6.r, horizontal: 10.r),

@@ -6,16 +6,11 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import 'Controller/tokens_controller.dart';
 
-class TokensDetailScreen extends StatefulWidget {
+class TokensDetailScreen extends StatelessWidget {
   static const String routeName = '/TokensDetailScreen';
 
-  const TokensDetailScreen({super.key});
+  TokensDetailScreen({super.key});
 
-  @override
-  State<TokensDetailScreen> createState() => _TokensDetailScreenState();
-}
-
-class _TokensDetailScreenState extends State<TokensDetailScreen> {
   final controller = Get.put(TokensDetailController());
 
   @override

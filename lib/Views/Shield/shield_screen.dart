@@ -3,19 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-
 import '../../Generated/assets.dart';
 import 'Controller/shield_screen_controller.dart';
 
-class ShieldScreen extends StatefulWidget {
+class ShieldScreen extends StatelessWidget {
   static const String routeName = '/ShieldScreen';
-  const ShieldScreen({super.key});
 
-  @override
-  State<ShieldScreen> createState() => _ShieldScreenState();
-}
+  ShieldScreen({super.key});
 
-class _ShieldScreenState extends State<ShieldScreen> {
   final controller = Get.put((ShieldController()));
 
   @override
@@ -97,11 +92,7 @@ class _ShieldScreenState extends State<ShieldScreen> {
                                       arguments: {
                                         'item': item,
                                         'index': index
-                                      })?.then(
-                                    (_) {
-                                      setState(() {});
-                                    },
-                                  );
+                                      });
                                 },
                                 title: Text(
                                   item.name.toString(),

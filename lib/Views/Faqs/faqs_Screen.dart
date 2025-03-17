@@ -5,16 +5,11 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../Generated/assets.dart';
 import 'Controller/faqs_controller.dart';
 
-class FaqsScreen extends StatefulWidget {
+class FaqsScreen extends StatelessWidget {
   static const String routeName = '/FaqsScreen';
 
-  const FaqsScreen({super.key});
+  FaqsScreen({super.key});
 
-  @override
-  State<FaqsScreen> createState() => _FaqsScreenState();
-}
-
-class _FaqsScreenState extends State<FaqsScreen> {
   final controller = Get.put(FaqsController());
 
   @override

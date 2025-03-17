@@ -7,16 +7,10 @@ import '../../Generated/assets.dart';
 import 'Controller/origins_screen_controller.dart';
 import 'origins_details_screen.dart';
 
-class OriginsScreen extends StatefulWidget {
+class OriginsScreen extends StatelessWidget {
   static const String routeName = '/OriginsScreen';
 
-  const OriginsScreen({super.key});
-
-  @override
-  State<OriginsScreen> createState() => _OriginsScreenState();
-}
-
-class _OriginsScreenState extends State<OriginsScreen> {
+  OriginsScreen({super.key});
   final controller = Get.put((OriginsController()));
 
   @override
@@ -97,11 +91,7 @@ class _OriginsScreenState extends State<OriginsScreen> {
                                       arguments: {
                                         'item': item,
                                         'index': index
-                                      })?.then(
-                                    (_) {
-                                      setState(() {});
-                                    },
-                                  );
+                                      });
                                 },
                                 //
                                 leading: item.icon.isEmpty

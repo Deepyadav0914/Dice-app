@@ -6,15 +6,11 @@ import 'package:get/get.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'Controller/shield_screen_controller.dart';
 
-class ShieldsDetailScreen extends StatefulWidget {
+class ShieldsDetailScreen extends StatelessWidget {
   static const String routeName = '/ShieldsDetailScreen';
-  const ShieldsDetailScreen({super.key});
 
-  @override
-  State<ShieldsDetailScreen> createState() => _ShieldsDetailScreenState();
-}
+  ShieldsDetailScreen({super.key});
 
-class _ShieldsDetailScreenState extends State<ShieldsDetailScreen> {
   final controller = Get.put(ShieldsController());
 
   @override
