@@ -2,10 +2,19 @@
 class Assets {
   Assets._();
 
-  static const String fontsVarelaRoundRegular =
-      'assets/fonts/VarelaRound-Regular.ttf';
+  static const String assetsDiceRoll = 'assets/DiceRoll.flr';
+  static const String diceAppAssetsDiceRoll = 'assets/DiceRoll.flr';
+  static const String fontsVarelaRoundRegular = 'assets/fonts/VarelaRound-Regular.ttf';
+  static const String images1 = 'assets/images/1.png';
+  static const String images2 = 'assets/images/2.png';
+  static const String images3 = 'assets/images/3.png';
+  static const String images4 = 'assets/images/4.png';
+  static const String images5 = 'assets/images/5.png';
+  static const String images6 = 'assets/images/6.png';
   static const String imagesBg = 'assets/images/bg.png';
+  static const String imagesBoard = 'assets/images/board.png';
   static const String imagesContact = 'assets/images/contact.png';
+  static const String imagesCustom = 'assets/images/custom.png';
   static const String imagesDownload = 'assets/images/download.png';
   static const String imagesEvents = 'assets/images/events.png';
   static const String imagesFaq = 'assets/images/faq.png';
@@ -14,6 +23,7 @@ class Assets {
   static const String imagesOrigins = 'assets/images/origins.png';
   static const String imagesPrivacy = 'assets/images/privacy.png';
   static const String imagesRate = 'assets/images/rate.png';
+  static const String imagesRed = 'assets/images/red.png';
   static const String imagesRewards = 'assets/images/rewards.png';
   static const String imagesSetting = 'assets/images/setting.png';
   static const String imagesShare = 'assets/images/share.png';
@@ -21,4 +31,6 @@ class Assets {
   static const String imagesSplash = 'assets/images/splash.png';
   static const String imagesStickers = 'assets/images/stickers.png';
   static const String imagesTokens = 'assets/images/tokens.png';
+  static const String imagesYellow = 'assets/images/yellow.png';
+
 }

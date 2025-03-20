@@ -6,6 +6,7 @@ import 'package:share_plus/share_plus.dart';
 import '../../../Api/api_calling.dart';
 import '../../../Model/dice_model.dart';
 import '../../../main.dart';
+import '../../Menu/Controller/menu_controller.dart';
 
 class DDrewardController extends GetxController {
   RxString date = ''.obs;
@@ -13,6 +14,7 @@ class DDrewardController extends GetxController {
   RxBool isLoading = true.obs;
   RxInt index = 0.obs;
   String VarelaRound = 'VarelaRound';
+
   RxMap<String, bool> claimedRewards = <String, bool>{}.obs;
 
   @override
@@ -20,7 +22,7 @@ class DDrewardController extends GetxController {
     fetchRewardData();
     loadClaimedRewards();
 
-     super.onInit();
+    super.onInit();
   }
 
   Future<void> fetchRewardData() async {
@@ -85,7 +87,16 @@ class DDRewardDetailController extends GetxController {
   }
 
   void claimReward() {
+    final title = name.split(' ');
+
+    int rewardDice = int.parse(title[0]);
+    print(rewardDice.runtimeType);
+
+    final MainmenuControlller con = Get.put(MainmenuControlller());
+    con.collectDices(rewardDice);
+
     rewardController.claimReward(rewardKey.value);
+
     isClaimed.value = true;
   }
 

@@ -6,7 +6,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:dice_app/Routes/Routes.dart' as r;
 import 'Views/Splash/splash_screen.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 

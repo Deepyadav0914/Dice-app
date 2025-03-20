@@ -126,7 +126,6 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                           controller.isClaimed.value
                               ? null
                               : () {
-                                  // controller.claimReward();
                                   Get.dialog(
                                     AlertDialog(
                                       backgroundColor: Colors.grey.shade300,

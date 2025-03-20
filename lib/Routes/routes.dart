@@ -4,6 +4,7 @@ import '../Views/Events/events_screen.dart';
 import '../Views/Events/specialevent_details.dart';
 import '../Views/Events/tournament_details.dart';
 import '../Views/Faqs/faqs_Screen.dart';
+import '../Views/Game/game_screen.dart';
 import '../Views/Menu/menu_screen.dart';
 import '../Views/Origins/origins_details_screen.dart';
 import '../Views/Origins/origins_screen.dart';
@@ -121,6 +122,12 @@ class Router {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => FaqsScreen(),
+        );
+
+      case GameScreen.routeName:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => GameScreen(),
         );
 
       case SettingScreen.routeName:

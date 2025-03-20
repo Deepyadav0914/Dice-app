@@ -1,4 +1,5 @@
 import 'package:dice_app/Generated/assets.dart';
+import 'package:dice_app/Views/Game/game_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -10,11 +11,14 @@ import '../Settings/settings_screen.dart';
 import '../Shield/shield_screen.dart';
 import '../Stickers/stickers_screen.dart';
 import '../Tokens/tokens_screen.dart';
+import 'Controller/menu_controller.dart';
 
 class MenuScreen extends StatelessWidget {
   static const String routeName = '/MenuScreen';
 
-  const MenuScreen({super.key});
+  MenuScreen({super.key});
+
+  final MainmenuControlller controller = Get.put(MainmenuControlller());
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +35,62 @@ class MenuScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 15.r, vertical: 15.r),
+                        EdgeInsets.symmetric(horizontal: 15.r, vertical: 10.r),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Welcome',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'VarelaRound',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 28.r,
+                        Container(
+                          height: 40.r,
+                          width: 120.r,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade800,
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all(width: 3.r, color: Colors.grey),
+                          ),
+                          child: Obx(
+                            () => Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(Assets.imagesLogo),
+                                Text(
+                                  '${controller.totalDices.value}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'VarelaRound',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20.r,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
+                        Spacer(),
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed(GameScreen.routeName);
+                          },
+                          child: Container(
+                            height: 40.r,
+                            width: 150.r,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade800,
+                              borderRadius: BorderRadius.circular(20.r),
+                              border:
+                                  Border.all(width: 3.r, color: Colors.grey),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Play Game',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'VarelaRound',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.r,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),
