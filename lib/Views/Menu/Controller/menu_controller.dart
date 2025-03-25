@@ -24,7 +24,6 @@ class MainmenuControlller extends GetxController {
     print("Total dices: ${totalDices.value}");
   }
 
-  // Method to less dices
   void lessDices(int rewardDice) {
     totalDices.value -= rewardDice;
     saveDices(); // Save updated coins to local storage

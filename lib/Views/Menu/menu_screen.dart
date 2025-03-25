@@ -50,7 +50,7 @@ class MenuScreen extends StatelessWidget {
                             () => Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset(Assets.imagesLogo),
+                                Image.asset(Assets.imagesLogo,height: 50),
                                 Text(
                                   '${controller.totalDices.value}',
                                   style: TextStyle(

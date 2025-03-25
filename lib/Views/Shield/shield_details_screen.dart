@@ -56,8 +56,8 @@ class ShieldsDetailScreen extends StatelessWidget {
                   FlipCard(
                     direction: FlipDirection.VERTICAL,
                     front: GlassmorphicContainer(
-                      width: 220.r,
-                      height: 380.r,
+                      width: 200.r,
+                      height: 230.r,
                       borderRadius: 20.r,
                       linearGradient: LinearGradient(
                         colors: [
@@ -71,30 +71,33 @@ class ShieldsDetailScreen extends StatelessWidget {
                         colors: [Colors.white54, Colors.white10],
                       ),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Center(
                             child: Image.asset(
                               Assets.imagesLogo,
-                              fit: BoxFit.contain,
+                              fit: BoxFit.fill,
+                              height: 160.r,
                             ),
                           ),
-                          25.verticalSpace,
-                          Text(
-                            'Tap Here',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 24.r,
-                              color: Colors.white,
-                              fontFamily: 'VarelaRound',
-                              fontWeight: FontWeight.bold,
+                          Center(
+                            child: Text(
+                              'Tap Here',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20.r,
+                                color: Colors.white,
+                                fontFamily: 'VarelaRound',
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     back: GlassmorphicContainer(
-                      width: 220.r,
-                      height: 380.r,
+                      width: 200.r,
+                      height: 230.r,
                       borderRadius: 20.r,
                       linearGradient: LinearGradient(
                         colors: [
@@ -111,6 +114,7 @@ class ShieldsDetailScreen extends StatelessWidget {
                         child: Image.network(
                           controller.image,
                           fit: BoxFit.cover,
+                          height: 230.r,
                         ),
                       ),
                     ),

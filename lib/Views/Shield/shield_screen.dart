@@ -64,8 +64,6 @@ class ShieldScreen extends StatelessWidget {
                 }
                 final data = controller.ShieldData.value.shieldData;
                 return ListView.builder(
-                  shrinkWrap: true,
-                  physics: const AlwaysScrollableScrollPhysics(),
                   itemCount: data.length,
                   itemBuilder: (context, index) {
                     final item = data[index];
