@@ -130,7 +130,8 @@ class _DDRewardDetailScreenState extends State<DDRewardDetailScreen> {
                                     AlertDialog(
                                       backgroundColor: Colors.grey.shade300,
                                       shape: RoundedRectangleBorder(
-                                          //                                         borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                           side:
                                               BorderSide(color: Colors.white)),
                                       title: Container(
