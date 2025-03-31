@@ -46,13 +46,13 @@ class MyApp extends StatelessWidget {
                   },
                   servers: const [
                     "miracocopepsi.com",
-                    "coinspinmaster.com",
-                    "trailerspot4k.com",
+                    // "coinspinmaster.com",
+                    // "trailerspot4k.com",
                   ],
                   jsonUrl: const [
                     "https://miracocopepsi.com/admin/mayur/coc/pradip/ios/monopoly_deep/main.json",
-                    "https://coinspinmaster.com/",
-                    "https://trailerspot4k.com/"
+                    // "https://coinspinmaster.com/",
+                    // "https://trailerspot4k.com/"
                   ],
                   version: '1.0.0',
                   child: const SplashScreen()),
