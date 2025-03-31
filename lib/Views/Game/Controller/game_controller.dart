@@ -552,7 +552,7 @@ class GameController extends GetxController {
                   content: Padding(
                     padding: const EdgeInsets.all(4),
                     child: Text(
-                      "Would you like  Restart  Game ?",
+                      "Would you like Restart Game?",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 16.r,
@@ -579,7 +579,7 @@ class GameController extends GetxController {
                         Get.back();
                       },
                     ),
-                    10.horizontalSpace,
+
                     ElevatedButton(
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.grey.shade700,

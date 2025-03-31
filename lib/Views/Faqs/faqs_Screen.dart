@@ -1,3 +1,4 @@
+import 'package:dice_app/AdPlugin/Ads/Native/NativeRN.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -85,6 +86,9 @@ class FaqsScreen extends StatelessWidget {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            index == 0
+                                ? NativeRN(parentContext: context)
+                                : SizedBox(),
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: 7.r, horizontal: 15.r),

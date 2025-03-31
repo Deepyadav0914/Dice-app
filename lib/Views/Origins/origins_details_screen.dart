@@ -1,4 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dice_app/AdPlugin/Ads/Banner/BannerWrapper.dart';
+import 'package:dice_app/AdPlugin/Ads/Native/NativeRN.dart';
+import 'package:dice_app/AdPlugin/AdsGridView/ads_gridview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -14,90 +17,90 @@ class OriginsDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
+    return BannerWrapper(
+      parentContext: context,
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(Assets.imagesBg), fit: BoxFit.fill),
+              ),
             ),
-          ),
-          SafeArea(
-            child: Column(
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 15.r, horizontal: 15.r),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      IconButton(
-                        onPressed: () => Get.back(),
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                          size: 28.r,
-                        ),
+            SafeArea(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 15.r, horizontal: 15.r),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          IconButton(
+                            onPressed: () => Get.back(),
+                            icon: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                              size: 28.r,
+                            ),
+                          ),
+                          Spacer(),
+                          Text(
+                            'Origins Details',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 26.r,
+                              fontFamily: 'VarelaRound',
+                            ),
+                          ),
+                          Spacer(),
+                        ],
                       ),
-                      Spacer(),
-                      Text(
-                        'Origins Details',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26.r,
-                          fontFamily: 'VarelaRound',
-                        ),
-                      ),
-                      Spacer(),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Obx(() {
-                    if (controller.isLoading.value) {
-                      return Center(
-                        child: LoadingAnimationWidget.hexagonDots(
-                          color: Colors.white,
-                          size: 40.r,
-                        ),
-                      );
-                    }
-                    final data = controller.item[0].stickers;
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GridView.builder(
-                        physics: const AlwaysScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3, // Adjust as needed
-                          crossAxisSpacing: 8.r,
-                          mainAxisSpacing: 8.r,
-                          childAspectRatio: 0.6,
-                        ),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
+                    ),
+                    Expanded(
+                      child: Obx(() {
+                        if (controller.isLoading.value) {
                           return Center(
-                            child: CachedNetworkImage(
+                            child: LoadingAnimationWidget.hexagonDots(
+                              color: Colors.white,
+                              size: 40.r,
+                            ),
+                          );
+                        }
+                        final data = controller.item[0].stickers;
+                        return AdsGridView(
+                          crossAxisCount:3,
+                          itemCount: data.length,
+                          adsIndex: 1,
+                          adsWidget: NativeRN(parentContext: context),
+                          itemPadding: EdgeInsets.all(0.r),
+                          itemMainAspectRatio: 1.5,
+                          itemWidget: (context, index) {
+                            return CachedNetworkImage(
                               imageUrl: data[index].image,
                               fit: BoxFit.fill,
-                              height: 150.r,
+
                               placeholder: (context, url) =>
                                   LoadingAnimationWidget.threeArchedCircle(
                                 color: Colors.grey,
                                 size: 20.r,
                               ),
-                            ),
-                          );
-                        },
-                      ),
-                    );
-                  }),
-                )
-              ],
+                            );
+                          },
+                        );
+                      }),
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
